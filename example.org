@@ -1,0 +1,34 @@
+
+
+* Examples
+  [2016-06-29 Wed 20:58]
+#+begin_src R :session orgR
+library(devtools)
+load_all("~/git/orgr/orgR")
+qs.file = "~/git/org/Archive/qs.org"
+#+end_src
+
+#+results:
+: ~/git/org/Archive/qs.org
+
+
+#+begin_src R :session orgR
+clock.ds <- GetClockTable(qs.file)
+clock.ds$duration = as.numeric(clock.ds$end - clock.ds$start , unit="secs")
+library(grid)
+library(gridExtra)
+p = view.Clock(clock.ds)
+grid.draw(p)
+#+end_src
+
+#+results:
+
+
+
+#+begin_src R :session orgR :exports results :results graphics :width 11 :height 6.5 :pointsize 14 :file (org-babel-temp-file "figure-" ".pdf") 
+p = viewByFamily.Clock(clock.ds)
+grid.draw(p)
+#+end_src
+
+#+results:
+[[file:/tmp/babel-1556xjA/figure-15569FU.pdf]]
