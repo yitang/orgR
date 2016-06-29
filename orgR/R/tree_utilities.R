@@ -74,21 +74,36 @@ formulateFamilyTree <- function(node.base, ancestor.level = 1, children.level = 
     node.base <- copy(node.base)
     ancestor.node <- node.base[level == ancestor.level, ]
     familyTree <- lapply(seq_len(nrow(ancestor.node)), function(i) {
+        print(i)
         ancestor.node.id <- ancestor.node[i, node.id]
         children.node.id <- searchChildren(node.base, ancestor.node.id, children.level)
+        if (is.null(children.node.id)) return()
         data.table(ancestor.node.id, children.node.id)
     })
-    return(familyTree)
-    
+    null.idx <- sapply(familyTree, is.null)
+    familyTree[!null.idx]
+    ## return(familyTree)    
 }
 
 addFamilyName <- function(node.base, familyTree){
+    "
+* Rest
+** Sleep
+** Nap
+** Sleep
+
+--> (Rest, Sleep),
+--> (Rest, Nap),
+--> (Rest, Sleep)
+"
     node.base <- copy(node.base)
-    sapply(seq_along(familyTree), function(i){
+    res <- lapply(seq_along(familyTree), function(i){
+        print(i)
         children.ids <- familyTree[[i]]$children.node.id
         ancestor.id <- unique(familyTree[[i]]$ancestor.node.id)
         ancestor.headline <- node.base[J(ancestor.id), headline]
         node.base[J(c(ancestor.id, children.ids)), ancestor.headlines := ancestor.headline]
     })
-    return(node.base)
+                                        # return(node.base)
+    rbindlist(res)
 }

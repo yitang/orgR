@@ -12,5 +12,6 @@ GetNodeBase <- function(org.file){
                             headline = headings,
                             start.line.num = heading.lines,
                             end.line.num = c(heading.lines[-1] - 1, length(file.content)))
+    setkey(node.base, node.id)
     node.base
 }

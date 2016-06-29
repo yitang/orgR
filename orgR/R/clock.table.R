@@ -48,21 +48,28 @@ GetClockTable <- function(org.file){
     
     clock.entry.lines <- grep("CLOCK: \\[", str)
 
+    node.info <- GetNodeBase(org.file)
+    node.ids <- sapply(clock.entry.lines, function(x) which.max(x < node.info$start.line.num))
+    
     clock.entries <- str[clock.entry.lines]
-    headings <- str_trim(str[heading.lines])
+    clock.table <- data.table(node.info[J(node.ids), list(node.id, level, headline)],
+               clock.entries)
+    
+    # headings <- str_trim(str[heading.lines])
 
-    ind <- sapply(clock.entry.lines, function(i) map.clock.heading(i, heading.lines))
-    clock.table <- data.table(clock.entries,
-                              headings = str[heading.lines[ind]],
-                              head.ind = heading.lines[ind])
+    ## ind <- sapply(clock.entry.lines, function(i) map.clock.heading(i, heading.lines))
+    ## clock.table <- data.table(clock.entries,
+    ##                           headings = str[heading.lines[ind]],
+    ##                           head.ind = heading.lines[ind])
     clock.table$clock.closed <- grepl("--", clock.table$clock.entries)
 
-ind <- clock.table$clock.closed == TRUE
+    ind <- clock.table$clock.closed == TRUE
     clock.table[ind, c("start", "end") := {
         ToISOdate(clock.entries)
     }]
 
     clock.table[, clock.entries := NULL]
+    setkey(clock.table, node.id)
     return(clock.table)
 
 }

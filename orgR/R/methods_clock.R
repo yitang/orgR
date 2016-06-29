@@ -8,8 +8,8 @@ subsetDuration.Clock <- function(Clock, min, max, inner = TRUE){
 }
 
 subsetPeriod.Clock <- function(Clock, time1, time2, wrap = FALSE){
-    ind1 <- Clock$start.time >= time1
-    ind2 <- Clock$end.time <= time2
+    ind1 <- Clock$start >= time1
+    ind2 <- Clock$end <= time2
     if (wrap)
         return(Clock[ind1 & ind2])
     Clock[ind1 | ind2]
@@ -83,10 +83,12 @@ view.Clock <- function(Clock) {
 viewByFamily.Clock <- function(Clock, split.by.level = 1, drill.down.level = 1) {
     Clock <- copy(Clock)
     Clock[, duration := as.numeric(duration)]
-    family.tree <- formulateFamilyTree(node.base, ancestor.level = split.by.level, children.level = 100)
+    # node.base <- GetNodeBase(qs.file)
+    # setkey(node.base, node.id) ## TODO: move this bit to GetNodeBase()
+    family.tree <- formulateFamilyTree(Clock, ancestor.level = split.by.level, children.level = 100)
     Clock <- addFamilyName(Clock, family.tree)
     p.hist.duration <- ggplot(Clock, aes(duration, fill = ancestor.headlines)) + geom_histogram() + scale_fill_discrete("Headline")
-    p.ts.duration <- ggplot(Clock, aes(x=start.time, y = duration, col = ancestor.headlines)) + geom_point() + geom_smooth() + scale_color_discrete("Headline")
+    p.ts.duration <- ggplot(Clock, aes(x=start, y = duration, col = ancestor.headlines)) + geom_point() + geom_smooth() + scale_color_discrete("Headline")
     p <- arrangeGrob(p.hist.duration,
                      p.ts.duration,
                      ncol = 2)
@@ -94,19 +96,19 @@ viewByFamily.Clock <- function(Clock, split.by.level = 1, drill.down.level = 1) 
 }
 
 
-viewPieChart.Clock <- function(Clock, split.by.level = 1, drill.down.level = 1) {
-    Clock <- copy(Clock)
-    Clock[, duration := as.numeric(duration)]
-    family.tree <- formulateFamilyTree(node.base, ancestor.level = split.by.level, children.level = 100)
-    Clock <- addFamilyName(Clock, family.tree)
-    p.pies <- lapply(seq_along(family.tree), function(i) {
-        ancestor.id <- unique(family.tree[[i]]$ancestor.node.id)
-        ancestor.headline <- node.base[J(ancestor.id), headline]
-        k <- drillDown.Clock(clock.table2, ancestor.id)
-        ggpie(k, "headline", "sum") + labs(title = ancestor.headline)
-    })
-    p.pies <- do.call(arrangeGrob, c(p.pies))
-    return(p.pies)
-}
+## viewPieChart.Clock <- function(Clock, split.by.level = 1, drill.down.level = 1) {
+##     Clock <- copy(Clock)
+##     Clock[, duration := as.numeric(duration)]
+##     family.tree <- formulateFamilyTree(Clock, ancestor.level = split.by.level, children.level = 100)
+##     Clock <- addFamilyName(Clock, family.tree)
+##     p.pies <- lapply(seq_along(family.tree), function(i) {
+##         ancestor.id <- unique(family.tree[[i]]$ancestor.node.id)
+##         ancestor.headline <- Clock[J(ancestor.id), headline]
+##         k <- drillDown.Clock(clock.table2, ancestor.id)
+##         ggpie(k, "headline", "sum") + labs(title = ancestor.headline)
+##     })
+##     p.pies <- do.call(arrangeGrob, c(p.pies))
+##     return(p.pies)
+## }
     
 
