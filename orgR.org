@@ -1,0 +1,1614 @@
+* orgR
+:LOGBOOK:  
+CLOCK: [2015-02-05 Thu 10:23]--[2015-02-05 Thu 12:26] =>  2:03
+CLOCK: [2014-11-20 Thu 21:27]--[2014-11-20 Thu 21:59] =>  0:32
+:END:      
+:PROPERTIES:
+:CATEGORY: orgR
+:header-args: :exports code
+:END:
+** Managing 
+:LOGBOOK:  
+CLOCK: [2014-11-20 Thu 21:02]--[2014-11-20 Thu 21:27] =>  0:25
+CLOCK: [2014-11-20 Thu 18:49]--[2014-11-20 Thu 18:53] =>  0:02
+:END:      
+
+should i move the scripts to R package folder or do it later? good to
+have in R package dir: 1). scripts and data are ready to load
+automatically. 2). publish when ready without hassel. 3). a specified
+git version. good to have it here: 1). reminds me it's just small
+proportion of what i achieve. 2). like to see other stuff here, give
+me some good ideas. 3) clock in and out, easiy to my commit with other
+tasks. i should stick to here.
+
+*** DONE PM orgR
+CLOSED: [2014-11-29 Sat 17:03]
+:LOGBOOK:  
+CLOCK: [2014-11-29 Sat 11:51]--[2014-11-29 Sat 13:46] =>  1:55
+:END:      
+
+[rv] I was trying to combine clock table with headings,
+clock.table 
+(heading, heading.ind, s, e), key is heading.ind, s, e 
+heading.table
+(heading, heading.ind, all.gas, xxx)
+
+join clock.table and heading.table by heading.ind.
+
+
+setkey(head.info, head.ind)
+setkey(clock.table, head.ind)
+tmp2 <- head.info[clock.table[, list(head.ind, start, end)]]
+
+tmp3 <- tmp2[heading == "Sleep", ]
+tmp3[, duration := end - start]
+ 
+
+
+level1.ind <- which(tmp2[, level == 1])
+level1.ind, level1.ind 
+
+
+lapply(a.list, function(i) )
+** CANCELLED content index                                       :CANCELLED:
+:LOGBOOK:  
+- State "CANCELLED"  from "NEXT"       [2015-03-11 Wed 16:35] \\
+  new design
+:END:      
+
+- [X] headings
+  start with a star, then new line 
+- [X] clock entry
+  has 'CLOCK: [' 
+- [ ] open clock
+  newl ine, start with active or interactive 
+- [ ] closed clock
+- [ ] shcedueld and deadline time
+- [ ] tags
+- [ ] properties
+- [ ] content 
+
+#+begin_src R
+file <- "~/git/org/qs.org"#
+str <- readLines(file)#
+library(lubridate)#
+library(data.table)
+library(stringr)
+heading.lines <- grep("^\\*", str)#
+clock.entry.lines <- grep("CLOCK: \\[", str)#
+
+content <- readLines("~/git/org/life.org")
+content <- str_trim(content)
+ind.ts <- grep("^\\[[[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2}", content)
+ind.clock.entry <- grep("CLOCK: ", cxontent)
+ind.heading <- grep("^[\\*]+ ", content)
+ind.property <- grep(":PROPERTIES:", content)
+
+ind.ts <- grep("^\\[[[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2}", str)
+ind.clock.entry <- grep("CLOCK: ", str)
+ind.heading <- grep("^[\\*]+ ", str)
+ind.property <- grep(":PROPERTIES:", str)
+
+
+## format clock data
+clock.entries <- content[ind.clock.entry]
+date <- str_extract_all(clock.entries, "[[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2}")
+time <- str_extract_all(clock.entries, "[[:digit:]]{1,2}\\:[[:digit:]]{1,2}") 
+date.tmp <- do.call(rbind, date)
+time.tmp <- do.call(rbind, time)
+s <- paste(date.tmp[, 1], time.tmp[, 1])
+e <- paste(date.tmp[, 2], time.tmp[, 2])
+duration <- time.tmp[, 3]
+
+                                        # cast to ISO date
+time.date.format <- "%Y-%m-%d %H:%M"
+s <- as.POSIXct(s, format = time.date.format)
+e <- as.POSIXct(e, format = time.date.format)
+duration <- lubridate::minute(lubridate::hm(duration)) ##
+data.table(s, e, duration)
+
+
+## format heading
+headings <- content[ind.heading]
+levels <- str_count(headings, "\\*")
+planning <- content[ind.heading + 1] ## second line of an trying is shceueing/deadilne staff if there is any
+ind.schedule <- grep("SCHEDULED", planning)
+ind.deadline <- grep("DEADLINE", planning)
+
+
+## three types of clock table
+## 1.open ts
+## 2.closed ts
+## 3.last clocked ts
+
+
+inactive.ts.format <- "\\[[0-9]{4}-[0-9]{2}-[0-9]{2} [[:alpha:]]{3} [0-9]{2}:[0-9]{2}\\]"
+ind.closed.ts <- grep("CLOSED", content ) ## closed ts
+ind.open.ts <- grep(paste0("^", inactive.ts.format), content)
+
+
+#+end_src
+** DONE orgR 0.9.0
+CLOSED: [2014-12-15 Mon 15:45]
+:LOGBOOK:  
+CLOCK: [2014-12-15 Mon 10:45]--[2014-12-15 Mon 11:24] =>  0:39
+:END:      
+[2014-12-15 Mon 11:05]
+*** headlines.R 
+:LOGBOOK:  
+CLOCK: [2014-12-15 Mon 11:24]--[2014-12-15 Mon 12:30] =>  1:06
+:END:      
+[2014-12-15 Mon 11:18]
+- [X] TS: closed, shedule, deadline 
+  take format as input 
+#+begin_src R :tangle ~/git/orgR/R/headlines.R
+##' ad descrition 
+##'
+##' lalla details
+##' @rdname time.stampe
+##' @title function 
+##' @param str content of a .org file
+##' @param ts.format format of time stamps used in the .org file. It is equivalent to \code{org-time-stamp-formats} in Emacs
+##' @return a 
+##' @export
+##' @author yitang
+GetTS <- function(str = "a", ts.format = c("<%Y-%m-%d %a>", "<%Y-%m-%d %a %H:%M>")){
+    inactive.ts.format <- "\\[[0-9]{4}-[0-9]{2}-[0-9]{2} [[:alpha:]]{3} [0-9]{2}:[0-9]{2}\\]"
+    
+    ts.category <- c(close = "CLOSED: ", dealine = "DEADLINE: ", scheduel = "SCHEDULED: ")
+    ts.entries <- lapply(ts.category, function(i){
+        i.str <- str_extract(str, paste0(i , inactive.ts.format))
+        i.ts <- gsub(i, "", i.str) 
+        return(i.ts)
+    })
+    setDT(ts.entries)
+    return(ts.entries)
+}
+
+
+##' org headlines 
+##'
+##' A function to parse org files, will return headlines and associated attributes, including tag, clock entries, shedules, deadlines, closed date, todo states,
+##' @title Headlines 
+##' @param org.file a file path point to a .org file 
+##' @return a table of headlines and attributes 
+##' @export
+##' @author Yi Tang
+GetHeadlines <- function(org.file = "~/tmp.org"){
+    str <- readLines(org.file) 
+    heading.lines <- grep("^\\*", str)#
+    headings <- str_trim(str[heading.lines])
+    
+    levels <- str_count(headings, "\\*")
+    ## remove stars from the heading
+    headings <- gsub("^\\*{1, } ", "", headings)
+
+
+
+    todo.keywords <- c("TODO", "NEXT", "DONE", "WAITING", "HOLD", "CANCELLED", "PHONE", "MEETING")
+    ## if (is.null(todo.keywords)){
+    ##     str <- strsplit(content, " ")
+    ##     str <- sapply(str, "[", 2)
+    ## }
+    ## must provide todo lists
+
+#### todo states 
+    first.word.in.headings <- str_extract(headings, "[[:alpha:]]{1, }")
+    todo.ind <- first.word.in.headings %in% todo.keywords
+    todo.state <- NA
+    todo.state[todo.ind] <- first.word.in.headings[todo.ind]
+
+#### tags
+    all.tags <- str_extract(headings, ":[[:alpha:]]{+}:")
+    archive.tag <- ":ARCHIVE:" == all.tags 
+    archive.tag[is.na(archive.tag)] <- FALSE
+
+
+    the.line.after.heading <- str[heading.lines + 1]
+    plan.ts <- GetTS(str = the.line.after.heading)
+
+    head.info <- data.table(id = 1:length(headings),
+                            heading = headings,
+                            head.ind = heading.lines,
+                            level = levels,
+                            todo = todo.state,
+                            tag = all.tags,
+                            archive = archive.tag,
+                            plan.ts)
+    return(head.info)
+}
+
+
+##' Search for parent headlines 
+##'
+##' Given a headlines table and headline id, it will return the parent headlines.
+##' @title search.parent 
+##' @param head.info a head table from GetHeadlings
+##' @param heading.id a unique id from head.info 
+##' @return a data.table 
+##' @export
+##' @author Yi Tang
+search.parent <- function(head.info, heading.id){
+    level.1.ind <- which(head.info$level == 1)
+    dist <- (level.1.ind - heading.id)^2
+    ind <- which.min(dist)
+    nearest.level.1 <- level.1.ind[ind] 
+    head.info[nearest.level.1 : heading.id]
+}
+
+
+## search.parent(head.info, 40)
+
+
+#### tree view of strcutre
+##' Visualise org-mode headings 
+##'
+##' tree structure of org headlines
+##' @title org-headings-tree
+##' @param head.info a data.tabl returned by GetHeadlines()
+##' @param output file to save the results, default setting is to print to scree 
+##' @param plantuml TRUE/FALSE, for plantuml program?
+##' @return a string that can be used in plantuml program
+##' @export
+##' @author Yi Tang
+tree.headings <- function(head.info, output = "screen", plantuml = TRUE){
+    tree.prep <- sapply(head.info$level, function(i) paste(rep("+", i), collapse = ""))
+    tree <- paste(tree.prep, head.info$heading)
+    if (plantuml) 
+        tree <- c("@startuml", "salt", "{", "{T", tree, "}", "}", "@enduml")
+    if (output == "screen")
+        cat(tree, sep = "\n")
+    else
+        cat(tree, sep = "\n", file = output)
+}
+
+## tree.headings(head.info, output = "screen")
+
+#+end_src
+**** fix search.parent 
+[2014-12-15 Mon 20:19]
+dist <- xx^2 
+*** clock.table.R  
+:LOGBOOK:  
+CLOCK: [2014-12-15 Mon 13:57]--[2014-12-15 Mon 14:57] =>  1:00
+:END:      
+[2014-12-15 Mon 12:16]
+
+#+begin_src R :tangle ~/git/orgR/R/clock.table.R
+
+map.clock.heading <- function(clock.ind, heading.vec){#
+    d <- clock.ind - heading.vec#
+    neg.ind <- which(d <= 0)[1]#
+    return(neg.ind - 1 )#
+}
+
+##' Parse clock entry to ISO date 
+##'
+##' 
+##' @title clock.table
+##' @param clock.entries a standard clock entry from org-mode
+##' @return POXICt object
+##' @author Yi Tang
+##' @export
+##' @examples 
+##' str <- c("CLOCK: [2014-11-26 Wed 09:36]--[2014-11-26 Wed 10:04] =>  0:28",
+##'          "CLOCK: [2014-12-04 Thu 15:24]--[2014-12-04 Thu 16:25] =>  1:01")
+##' ToISOdate(str)
+ToISOdate <- function(clock.entries){
+    s <- str_locate_all(clock.entries, "\\[")
+    e <- str_locate_all(clock.entries, "\\]")
+    tmp1 <- rep(NA, len = length(clock.entries))
+    tmp2 <- rep(NA, len = length(clock.entries))
+    for (i in seq_along(clock.entries)){
+        s.i <- s[[i]]
+        e.i <- e[[i]]
+        tmp1[i] <- substr(clock.entries[i], s.i[1, 1] + 1 , e.i[1, 1] - 1)
+        tmp2[i] <- substr(clock.entries[i], s.i[2, 1] + 1, e.i[2, 1] - 1)
+    }
+    res <- list(lubridate::ymd_hm(tmp1),
+                lubridate::ymd_hm(tmp2))
+    return(res)
+}
+
+##' Parse org file
+##'
+##' scan a org file and return the headlines and associated clock entries 
+##' @title clock.table 
+##' @export
+##' @param org.file a org file 
+##' @return a data.table 
+##' @author Yi Tang
+GetClockTable <- function(org.file = "~/tmp.org"){
+    ## org.file <- "~/git/org/tmp.org"
+    str <- readLines(org.file) 
+    heading.lines <- grep("^\\*", str)
+    clock.entry.lines <- grep("CLOCK: \\[", str)
+
+
+
+    clock.entries <- str[clock.entry.lines]
+    headings <- str_trim(str[heading.lines])
+
+    ind <- sapply(clock.entry.lines, function(i) map.clock.heading(i, heading.lines))
+    clock.table <- data.table(clock.entries,
+                              headings = str[heading.lines[ind]],
+                              head.ind = heading.lines[ind])
+    clock.table$clock.closed <- grepl("--", clock.table$clock.entries)
+
+ind <- clock.table$clock.closed == TRUE
+    clock.table[ind, c("start", "end") := {
+        ToISOdate(clock.entries)
+    }]
+
+    clock.table[, clock.entries := NULL]
+    return(clock.table)
+
+}
+                         
+#+end_src
+*** methods.R 
+#+begin_src R :tangle ~/git/orgR/R/methods.R 
+getstyle <- function(text_size = 20){
+  theme_bw() +
+    theme(axis.title.x = element_text(colour="black", size=text_size)) +
+    theme(axis.text.x = element_text(size = text_size)) +
+    theme(axis.title.y = element_text(colour="black", size=text_size)) +
+    theme(axis.text.y = element_text(size = text_size)) +
+    theme(legend.position="none") +
+    theme(plot.title = element_text(face="bold", size = text_size+2, vjust = 2)) 
+}
+
+ggpie <- function(data, category = character(), value = numeric()){
+    data$category <- data[, category]
+  data$value <- data[, value]
+  data$category <- factor(data$category, 
+                          levels = data$category[order(data$value, decreasing=TRUE)])
+  
+  p <- ggplot(data, aes(x = factor(1), fill = factor(category), y = (value)/sum(value),
+                        order = (value)/sum(value))) +
+    geom_bar(stat = "identity", width = 1) + 
+    labs(title = "", x = "", y= "") + 
+    getstyle(10) + scale_fill_tableau("colorblind10")+
+    coord_polar(theta="y", direction = -1) +
+    theme(legend.position="right") +
+    theme(axis.ticks=element_blank(), axis.text.y = element_blank(), axis.text.x = element_blank(), 
+          legend.text=element_text(size=14), legend.title=element_text(size=14) )+
+    guides(fill = guide_legend(title = category))
+  return(p)
+}
+
+ggpie2 <- function (dat, by, totals) {
+    ggplot(dat, aes_string(x=factor(1), y=totals, fill=by)) +
+    geom_bar(stat='identity', color='black') +
+    scale_fill_brewer() +
+    guides(fill=guide_legend(override.aes=list(colour=NA))) + # removes black borders from legend
+    coord_polar(theta='y') +
+    theme(axis.ticks=element_blank(),
+          axis.text.y=element_blank(),
+          axis.text.x=element_text(colour='black'),
+          axis.title=element_blank(),
+          legend.position="none") +
+    scale_y_continuous(breaks=cumsum(dat[[totals]]) - dat[[totals]] / 2, labels=dat[[by]]) 
+}
+#+end_src
+*** description 
+[2014-12-15 Mon 12:18]
+#+begin_src fundamental :tangle ~/git/orgR/DESCRIPTION 
+Package: orgR
+Type: Package
+Title: Analyse Text Files Created by Emacs' Org mode
+Version: 0.9.0
+Date: 2014-12-15
+Author: Yi Tang
+Maintainer: Yi Tang <yi.tang.uk@me.com>
+Description: Provides functionality to process text files created by Emacs' Org mode, and decompose the content to the smallest components (headlines, body, tag, clock entries etc).  Emacs is an extensible, customizable text editor and Org mode is for keeping notes, maintaining TODO lists, planning projects.  Allows users to analyze org files as data frames in R, e.g., to convieniently group tasks by tag into project and calculate total working hours.  Also provides some help functions like search.parent, gg.pie (visualise working hours in ggplot2) and tree.headlines (visualise headline stricture in tree format) to help user managing their complex org files. 
+License: GPL (>= 2)
+Depends:
+  ggthemes (>= 1.7.0),
+  ggplot2 (>= 1.0.0),
+  lubridate(>= 1.3.3),
+  data.table (>= 1.9.4),
+  stringr (>= 0.6.2)
+#+end_src
+*** example file 
+[2014-12-15 Mon 12:20]
+*** orgR.R 
+[2014-12-15 Mon 12:30]
+#+begin_src R :tangle ~/git/orgR/R/orgR.R
+
+##' orgR 
+##'
+##' a package to process org file 
+##' @title orgR 
+##' @author yitang
+##' @name orgR
+##' @import data.table ggplot2 ggthemes stringr
+##' @importFrom lubridate ymd_hm
+NULL
+
+#+end_src
+*** DONE upload to CRAN
+CLOSED: [2014-12-15 Mon 15:45]
+:LOGBOOK:  
+CLOCK: [2014-12-15 Mon 14:57]--[2014-12-15 Mon 16:20] =>  1:23
+:END:      
+[2014-12-15 Mon 15:45]
+[rv] 
+**** R package check 
+:LOGBOOK:  
+CLOCK: [2014-12-15 Mon 13:30]--[2014-12-15 Mon 13:36] =>  0:06
+CLOCK: [2014-12-15 Mon 12:30]--[2014-12-15 Mon 12:52] =>  0:22
+:END:      
+[2014-12-15 Mon 12:32]
+**** CRAN policy 
+[2014-12-15 Mon 15:01]
+CRAN Repository Policy
+
+Version $Revision: 3184 $
+CRAN Repository Maintainers
+Top
+
+Preamble
+
+This document describes the policies in place for the R package repository hosted by the Comprehensive R Archive Network. In what follows, this CRAN package repository will be referred to as “CRAN”.
+
+CRAN is maintained by the efforts of volunteers (the “CRAN team”) and the resources of the R Foundation and the employers of those volunteers (WU Wien, TU Dortmund, U Oxford, AT&T Research). Having a package distributed by CRAN is subject to a set of policies, and submitting a package (including an update) to CRAN indicates agreement to these policies.
+
+Distributing code or documentation is subject to legal requirements, and CRAN operates in many jurisdictions. One of the aims of these policies is to ensure that the distributors meet their legal obligations of diligence without excessive work.
+
+The time of the volunteers is CRAN’s most precious resource, and they reserve the right to remove or modify packages on CRAN without notice or explanation (although notification will usually be given).
+
+Source packages
+
+The ownership of copyright and intellectual property rights of all components of the package must be clear and unambiguous (including from the authors specification in the DESCRIPTION file). Where code is copied (or derived) from the work of others (including from R itself), care must be taken that any copyright/license statements are preserved and authorship is not misrepresented.
+Preferably, an ‘Authors@R’ would be used with ‘ctb’ roles for the authors of such code. Alternatively, the ‘Author’ field should list these authors as contributors.
+
+Where copyrights are held by an entity other than the package authors, this should preferably be indicated via ‘cph’ roles in the ‘Authors@R’ field, or using a ‘Copyright’ field (if necessary referring to an inst/COPYRIGHTS file).
+
+Trademarks must be respected.
+
+The package’s DESCRIPTION file must show both the name and email address of a single designated maintainer (a person, not a mailing list). That contact address must be kept up to date, and be usable for information mailed by the CRAN team without any form of filtering, confirmation …
+The maintainer warrants that (s)he is acting on behalf of all credited authors and has their agreement to use their material in the way it is included in the package (or if this is not possible, warrants that it is used in accordance with the license granted by the original author).
+
+Additional DESCRIPTION fields could be used for providing email addresses for contacting the package authors/developers (e.g., ‘Contact’), or a URL for submitting bug reports (e.g., ‘BugReports’).
+
+Source packages may not contain any form of binary executable code.
+Source packages under an Open Source license must provide source or something which can easily be converted back to source (e.g., .rda files) for all components of the package (including for example PDF documentation, configure files produced by autoconf). For Java .class and .jar files, the sources should be in a top-level java directory in the source package (or that directory should explain how they can be obtained).
+Such packages are not permitted to require (e.g., by specifying in ‘Depends’, ‘Imports’ or ‘LinkingTo’ fields) directly or indirectly a package or external software which restricts users or usage.
+
+The package’s license must give the right for CRAN to distribute the package in perpetuity. Any change to a package’s license must be highlighted when an update is submitted (for there have been instances of an undocumented license change removing even the right of CRAN to distribute the package).
+
+Packages with licenses not listed at https://svn.r-project.org/R/trunk/share/licenses/license.db will generally not be accepted.
+
+Package authors should make all reasonable efforts to provide cross-platform portable code. Packages will not normally be accepted that do not run on at least two of the major R platforms. Cases for Windows-only packages will be considered, but CRAN may not be the most appropriate place to host them.
+Packages should be named in a way that does not conflict (irrespective of case) with any current or past CRAN package (the Archive area can be consulted), nor any current Bioconductor package. Package maintainers give the right to use that package name to CRAN when they submit, so the CRAN team may orphan a package and allow another maintainer to take it over.
+When a new maintainer wishes to take over a package, this should be accompanied by the written agreement of the previous maintainer (unless the package has been formally orphaned).
+
+Packages on which a CRAN package depends should be available from a mainstream repository: if any mentioned in ‘Suggests’ or ‘Enhances’ fields are not from such a repository, where to obtain them at a repository should be specified in an ‘Additional_repositories’ field of the DESCRIPTION file (as a comma-separated list of repository URLs) or for other means of access, described in the ‘Description’ field.
+Packages will not normally be removed from CRAN: however, they may be archived, including at the maintainer’s request.
+Packages for which R CMD check gives an ‘ERROR’ when a new R x.y.0 version is released will be archived (or in exceptional circumstances updated by the CRAN team) unless the maintainer has set a firm deadline for an upcoming update (and keeps to it).
+
+Maintainers will be asked to update packages which show any warnings or significant notes, especially at around the time of a new x.y.0 release. Packages which are not updated are liable to be archived.
+
+Packages should be of the minimum necessary size. Reasonable compression should be used for data (not just .rda files) and PDF documentation: CRAN will if necessary pass the latter through qpdf.
+As a general rule, neither data nor documentation should exceed 5MB (which covers several books). A CRAN package is not an appropriate way to distribute course notes, and authors will be asked to trim their documentation to a maximum of 5MB.
+
+Where a large amount of data is required (even after compression), consideration should be given to a separate data-only package which can be updated only rarely (since older versions of packages are archived in perpetuity).
+
+Similar considerations apply to other forms of “data”, e.g., .jar files.
+
+Checking the package should take as little CPU time as possible, as the CRAN check farm is a very limited resource and there are thousands of packages. Long-running tests and vignette code can be made optional for checking, but do ensure that the checks that are left do exercise all the features of the package.
+If running a package uses multiple threads/cores it must never use more than two simultaneously: the check farm is a shared resource and will typically be running many checks simultaneously.
+
+Examples should run for no more than a few seconds each: they are intended to exemplify to the would-be user how to use the functions in the package.
+
+The code and examples provided in a package should never do anything which might be regarded as malicious or anti-social. The following are illustrative examples from past experience.
+- Compiled code should never terminate the R process within which it is running. Thus C/C++ calls to assert/abort/exit, Fortran calls to STOP and so on must be avoided. Nor may R code call q().
+- A package must not tamper with the code already loaded into R: any attempt to change code in the standard and recommended packages which ship with R is prohibited. Altering the namespace of another package should only be done with the agreement of the maintainer of that package.
+- Packages should not write in the users’ home filespace, nor anywhere else on the file system apart from the R session’s temporary directory (or during installation in the location pointed to by TMPDIR: and such usage should be cleaned up). Installing into the system’s R installation (e.g., scripts to its bin directory) is not allowed.
+Limited exceptions may be allowed in interactive sessions if the package obtains confirmation from the user.
+
+- Packages should not modify the global environment (user’s workspace).
+- Packages should not start external software (such as PDF viewers or browsers) during examples or tests unless that specific instance of the software is explicitly closed afterwards.
+- Packages should not send information about the R session to the maintainer’s or third-party sites without obtaining confirmation from the user.
+- Packages must not disable the stack-checking mechanism in the R process into which they are loaded.
+- CRAN packages should use only the public API. Hence they should not use entry points not declared as API in installed headers nor .Internal() nor .Call() etc calls to base packages. Also, ::: should not be used to access undocumented/internal functions in base packages. Such usages can cause packages to break at any time, even in patched versions of R.
+Changes to CRAN packages causing significant disruption to other packages must be agreed with the CRAN maintainers well in advance of any publicity. Introduction of packages providing back-compatibility versions of already available packages is not allowed.
+Binary packages
+
+Policies for when a (Windows or OS X) binary package will be distributed:
+
+all its package dependencies on CRAN are available for that platform. Dependencies from other repositories will be installed at CRAN’s discretion.
+any external software needed can easily be installed on the build machine for all the sub-architectures: here “easily” includes not depending on specific versions, nor should the installed binary depend on specific versions.
+it passes R CMD check without error for all the available sub-architectures, or at CRAN’s discretion, for the most important sub-architecture(s).
+Binary packages are not accepted from maintainers: CRAN will only host binary packages prepared by those responsible for the binary areas. Their packages are made automatically by batch jobs and can take a day or two to appear on the CRAN master site (maybe longer to reach CRAN mirrors).
+
+Submission
+
+When submitting a package to CRAN you should use the submission form at http://CRAN.R-project.org/submit.html (and not send an email). You will be sent a confirmation email which needs to be accepted.
+
+If this fails, upload by anonymous ftp to ftp://CRAN.R-project.org/incoming/ and send a (plain text ASCII) email at the same time, with subject line as specified below.
+
+In either case, you can check that the submission was received by looking at ftp://CRAN.R-project.org/incoming/.
+
+In more detail:
+
+Uploads must be source tarballs created by R CMD build and following the PACKAGE_VERSION.tar.gz naming scheme.
+Please ensure that R CMD check --as-cran has been run on the tarball to be uploaded before submission. This should be done with the current version of R-devel (or if that is not possible and explained in the submission, current R-patched or the current release of R.)
+In principle, packages must pass R CMD check without warnings or significant notes to be admitted to the main CRAN package area. If there are warnings or notes you cannot eliminate (for example because you believe them to be spurious) send an explanatory note as part of your covering email, or as a comment on the submission form.
+
+For a package update, please check that any packages depending on this one still pass R CMD check: it is especially expected that you will have checked your own packages. Reverse dependencies can conveniently be checked using tools::check_packages_in_dir(reverse = list()). A listing of the reverse dependencies of the current version can be found on the CRAN web page for the package, or be obtained via tools::package_dependencies(reverse = TRUE).
+An ftp upload should be accompanied by an email to CRAN@R-project.org sent from the maintainer address listed in the package, and using the subject line ‘CRAN submission PACKAGE VERSION’, where PACKAGE and VERSION are the package name and version, respectively. Plain text ASCII emails should be used if at all possible.
+If for some reason the submission has to be made by someone else (for example, a co-author) this needs to be explained, and the designated maintainer will need to confirm the submission. Explain any change in the maintainer’s email address and if possible send confirmation from the previous address.
+
+For a new submission, confirm in your email that you have read and agree to these policies. (This includes new versions of previously archived packages, and the first submission as the new maintainer for a package.)
+
+If the package needs special treatment (for example if vignettes can only be run or re-built on the maintainer’s machine or take a very long time), say so in the submission email or on the submission form.
+
+Do not email the package itself.
+
+Once uploaded, no further submissions of that package should be made whilst the uploaded version is pending processing (which may take a few days) and you have not received a reply from a CRAN maintainer.
+Part of the processing is that uploads may be renamed by adding one of the extensions .save, .pending or .noemail: the presence of such a file is a sign that the submission process is not finished yet and CRAN maintainers are waiting for response or resubmission from the package maintainer (and such a file name should never be uploaded).
+Submitting updates should be done responsibly and with respect for the volunteers’ time. Once a package is established (which may take several rounds), “no more than every 1–2 months” seems appropriate.
+Authors can avoid a lot of the all too frequent rounds of updates by checking carefully for themselves. It should be normal for those without Windows machines of their own to use the winbuilder service to check a package before submission. There is a lot of helpful advice on writing portable packages in “Writing R Extensions”.
+
+Before submitting a package update, consult the CRAN check page at http://CRAN.R-project.org/web/checks/check_results_NAME.html, substituting NAME by the name of your package. In particular, wait for that page to be fully updated after publication of a version (which can take at least 48 hours) before submitting any corrections.
+
+If an update will change the package’s API and hence affect packages depending on it, it is expected that you will contact the maintainers of affected packages and suggest changes, and give them time to prepare updates before submitting your updated package. Do mention in the submission email which packages are affected and that their maintainers have been informed. In order to derive the reverse dependencies of a package including the addresses of maintainers who have to be notified upon changes, the function reverse_dependencies_with_maintainers is available from the developer website.
+**** tipis on submit to CRAN 
+[2014-12-15 Mon 16:18]
+[[http://kbroman.org/pkg_primer/pages/cran.html][Getting your R package on CRAN]]
+**** Edit 
+[2014-12-15 Mon 19:49]
+1. Pls use title case, and improve: of course it is an R package.
+2. Pls make more comprehensive (it is less than the title)!
+3. no visible binding for global variable
+
+description: this package aim to mimic the org-functions inside of Emacs, like clock.table, outlines as a data.frame, which can be easily manipulate and analysed. Emacs user may also find this package userful for the helper function, like the ggpie, which provides a beautiful 
+** orgR 0.9.2 
+[2015-03-04 Wed 07:49]
+
+** Research or Individual topics 
+[2015-02-05 Thu 10:28]
+*** create pie chart in ggplot 
+:LOGBOOK:  
+CLOCK: [2014-12-06 Sat 11:00]--[2014-12-06 Sat 11:48] =>  0:48
+:END:      
+[2014-12-07 Sun 22:45]
+11:00 - 11:48, update ggpie in yiR package
+#+begin_src R
+#### ggplot, piechart
+## help function
+#' check also: https://github.com/jrnold/ggthemes
+#' (especially for the color schemes)
+
+#' define style for the charts ####
+#' usage: g <- g +getstyle (text_size = 20)
+#' ref: https://gist.github.com/nassimhaddad/4994317
+getstyle <- function(text_size = 20){
+    theme_bw() +
+        theme(axis.title.x = element_text(colour="black", size=text_size)) +
+            theme(axis.text.x = element_text(size = text_size)) +
+                theme(axis.title.y = element_text(colour="black", size=text_size)) +
+                    theme(axis.text.y = element_text(size = text_size)) +
+                        theme(legend.position="none") +
+                            theme(plot.title = element_text(face="bold", size = text_size+2, vjust = 2)) 
+}
+
+ggpie <- function(data, category = character(), value = numeric()){
+    require(ggplot2)
+    require(ggthemes)
+    data$category <- data[, category]
+    data$value <- data[, value]
+    data$category <- factor(data$category, 
+                            levels = data$category[order(data$value, decreasing=TRUE)])
+
+    p <- ggplot(data, aes(x = factor(1), fill = factor(category), y = (value)/sum(value),
+                          order = (value)/sum(value))) +
+                              geom_bar(stat = "identity", width = 1) + 
+                                  labs(title = "", x = "", y= "") + 
+                                      getstyle(10) + scale_fill_tableau("colorblind10")+
+                                          coord_polar(theta="y", direction = -1) +
+                                              theme(legend.position="right") +
+                                                  theme(axis.ticks=element_blank(), axis.text.y = element_blank(), axis.text.x = element_blank(), 
+                                                        legend.text=element_text(size=14), legend.title=element_text(size=14) )+
+                                                            guides(fill = guide_legend(title = category))
+    return(p)
+}
+
+#+end_src
+*** DONE Process heading
+CLOSED: [2014-11-20 Thu 18:50]
+:LOGBOOK:  
+CLOCK: [2014-11-20 Thu 17:35]--[2014-11-20 Thu 18:49] =>  1:14
+:END:      
+[2014-11-20 Thu 17:35]
+[2014-11-20 Thu 18:48]
+scan a org file and return a data.table that has 
+all the info about a heading, include title, level, todo state, tags and archive.
+also a helper function, search.parent to find the ancester of a todo entry.
+another helper function that convert headings into a planuml form and can be visualized easily.
+
+
+#+begin_src R :tangle ~/git/orgR/R/process_heading.R
+## [2014-11-20 Thu 18:48]
+## scan a org file and return a data.table that has 
+## all the info about a heading, include title, level, todo state, tags and archive.
+## also a helper function, search.parent to find the ancester of a todo entry.
+
+levels <- str_count(headings, "\\*")
+## remove stars from the heading
+headings <- gsub("^\\*{1, } ", "", headings)
+
+todo.keywords <- c("TODO", "NEXT", "DONE", "WAITING", "HOLD", "CANCELLED", "PHONE", "MEETING")
+## if (is.null(todo.keywords)){
+##     str <- strsplit(content, " ")
+##     str <- sapply(str, "[", 2)
+## }
+## must provide todo lists
+
+#### todo states 
+first.word.in.headings <- str_extract(headings, "[[:alpha:]]{1, }")
+todo.ind <- first.word.in.headings %in% todo.keywords
+todo.state <- NA
+todo.state[todo.ind] <- first.word.in.headings[todo.ind]
+
+#### tags
+all.tags <- str_extract(headings, ":[[:alpha:]]{+}:")
+archive.tag <- ":ARCHIVE:" == all.tags 
+archive.tag[is.na(archive.tag)] <- FALSE
+
+head.info <- data.table(id = 1:length(headings),
+                        heading = headings,
+                        head.ind = heading.lines,
+                        level = levels,
+                        todo = todo.state,
+                        tag = all.tags,
+                        archive = archive.tag)
+
+search.parent <- function(head.info, heading.id){
+    level.1.ind <- which(head.info$level == 1)
+    dist <- (level.1.ind - heading.id)^2
+    ind <- which.min(dist)
+    nearest.level.1 <- level.1.ind[ind] 
+    head.info[nearest.level.1 : heading.id]
+}
+
+
+search.parent(head.info, 40)
+
+#### tree view of strcutre
+tree.headings <- function(head.info, output = "screen", plantuml = TRUE){
+    tree.prep <- sapply(head.info$level, paste(rep("+", i), collapse = ""))
+    tree <- paste(tree.prep, head.info$heading)
+    if (plantuml) 
+        tree <- c("@startuml", "salt", "{", "{T", tree, "}", "}", "@enduml")
+    if (output == "screen")
+        cat(tree, sep = "\n")
+    else
+        cat(tree, sep = "\n", file = output)
+}
+
+tree.headings(head.info, output = "screen")
+
+
+
+
+
+#+end_src
+
+*** DONE Process clock entries 
+CLOSED: [2014-11-20 Thu 17:35]
+:LOGBOOK:  
+CLOCK: [2014-11-16 Sun 13:20]--[2014-11-16 Sun 14:25] =>  1:05
+:END:      
+[2014-11-16 Sun 13:24]
+
+#+begin_src R :tangle ~/git/orgR/R/start_.R
+## [2014-11-20 Thu 17:28]
+## this scripts will scan a org file and return a clock data.table,
+## Each heading has multi clock entries which are in ISO format 
+## a helper function, ggpie, to visualize total time for each cateogry.
+
+
+ggpie <- function (dat, by, totals) {
+    require(ggplot2)
+    ggplot(dat, aes_string(x=factor(1), y=totals, fill=by)) +
+        geom_bar(stat='identity', color='black') +
+            scale_fill_brewer() +
+                guides(fill=guide_legend(override.aes=list(colour=NA))) + # removes black borders from legend
+                    coord_polar(theta='y') +
+                        theme(axis.ticks=element_blank(),
+                              axis.text.y=element_blank(),
+                              axis.text.x=element_text(colour='black'),
+                              axis.title=element_blank(),
+                              legend.position="none") +
+                                  scale_y_continuous(breaks=cumsum(dat[[totals]]) - dat[[totals]] / 2, labels=dat[[by]]) 
+}
+
+
+#### scan .org file and parse the clock table
+file <- "~/git/org/tmp.org"#
+str <- readLines(file)#
+library(lubridate)#
+library(data.table)
+library(stringr)
+heading.lines <- grep("^\\*", str)#
+clock.entry.lines <- grep("CLOCK: \\[", str)#
+
+map.clock.heading <- function(clock.ind, heading.vec){#
+    d <- clock.ind - heading.vec#
+    neg.ind <- which(d <= 0)[1]#
+    return(neg.ind - 1 )#
+}
+
+clock.entries <- str[clock.entry.lines]
+headings <- str_trim(str[heading.lines])
+
+ind <- sapply(clock.entry.lines, function(i) map.clock.heading(i, heading.lines))
+clock.table <- data.table(clock.entries,
+                          headings = str[heading.lines[ind]],
+                          head.ind = heading.lines[ind])
+
+
+clock.entry.check <- function(clock.entries){#
+    grepl("--", clock.entries)#
+}
+clock.table[, clock.closed := clock.entry.check(clock.entries)]#
+
+ToISOdate <- function(clock.entries){#
+    s <- str_locate_all(clock.entries, "\\[")#
+    e <- str_locate_all(clock.entries, "\\]")#
+    tmp1 <- rep(NA, len = length(clock.entries))#
+    tmp2 <- rep(NA, len = length(clock.entries))#
+    for (i in seq_along(clock.entries)){#
+        s.i <- s[[i]]#
+        e.i <- e[[i]]#
+        tmp1[i] <- substr(clock.entries[i], s.i[1, 1] + 1 , e.i[1, 1] - 1)#
+        tmp2[i] <- substr(clock.entries[i], s.i[2, 1] + 1, e.i[2, 1] - 1)#
+    }#
+    res <- list(lubridate::ymd_hm(tmp1),#
+                lubridate::ymd_hm(tmp2))#
+    return(res)#
+}#
+
+clock.table[clock.closed == TRUE, c("start", "end") := {#
+    ## s <- str_locate_all(clock.entries, "\\[")#
+    ## e <- str_locate_all(clock.entries, "\\]")#
+    ## tmp1 <- rep(NA, len = length(clock.entries))#
+    ## tmp2 <- rep(NA, len = length(clock.entries))#
+    ## for (i in seq_along(clock.entries)){#
+    ##     s.i <- s[[i]]#
+    ##     e.i <- e[[i]]#
+    ##     tmp1[i] <- substr(clock.entries[i], s.i[1, 1] + 1 , e.i[1, 1] - 1)#
+    ##     tmp2[i] <- substr(clock.entries[i], s.i[2, 1] + 1, e.i[2, 1] - 1)#
+    ## }#
+    ## list(lubridate::ymd_hm(tmp1),#
+    ##      lubridate::ymd_hm(tmp2))#
+    ToISOdate(clock.entries)#
+}]
+
+
+clock.table[, clock.closed := NULL]
+clock.table[, clock.entries := NULL]
+
+
+
+##### play 
+clock.table[, duration := end - start]
+clock.table[, W := lubridate::week(end)]
+clock.table[, sum(duration), by = headings]
+clock.table[V1 >= 10, sum(duration), by = headings]
+clock.table[, sum(duration), by = headings][V1 >= 10]
+clock.table[W==46, sum(duration), by = headings][V1 >= 10]
+gg.df <- clock.table[W==46, sum(duration), by = headings][V1 >= 10]
+gg.df[, Time := as.numeric(V1)]
+
+ggpie(gg.df, by = "headings", "Time")
+#+end_src
+
+*** DONE tree strcutre of org headings
+CLOSED: [2014-11-17 Mon 20:54]
+:LOGBOOK:  
+CLOCK: [2014-11-17 Mon 19:20]--[2014-11-17 Mon 20:58] =>  1:38
+:END:      
+[2014-11-17 Mon 19:21]
+i want to have a tree strcuture of org headings, it's easier to have a whole picture about the strcutre of a project. 
+the clock table can give me the same feature as table, but i want to look at a picture, which is a lot more traval. 
+i have see sarachua use similary feature on her Emacs talk. she said it took her a while to go to that point. 
+she said if a taks is cancled, then the corresponding graph will be removed. 
+on that video, she's search for the code to do that for about 5-10 minutes and can't find it...
+
+maybe i can find the structure in R and cast the tree strcture to a plantuml code, but the things is that i doesn;t know lantuml very well and not sure it's worhtth the time to investimate more.
+something in my mind: 
+a heading is an object, with heading be the title, tody state be variable, total time spent on that time be a vairbale. 
+
+i've noticed that there salt, a subproject to planuml can draw a tree, very easily.
+#+begin_src plantuml :file tmp1000.png
+@startuml
+salt
+{
+{
+T
++ world
+++ asin
+++ europian
+}
+}
+@enduml
+#+end_src
+
+
+
+
+
+#+begin_src plantuml :file tmp1200.png
+@startuml
+salt
+{
+{
+T
++ GFES
+++ PM
+++ MISC
+++ NHI 
++++ NHI (U)
+++++ Evolved From Trigger
+++++ Background precip 
+++++ Remove hist events
++++ NHI (X)
+++++ Marginal Analysis
+++++ Transformation 
+}
+}
+@enduml
+#+end_src
+
+#+results:
+[[file:tmp1200.png]]
+
+
+Is this the plot i am looking for? 
+
+or maybe as class diagram? [[http://image.slidesharecdn.com/plantumlintroductie-140123014828-phpapp02/95/plantuml-introduction-11-638.jpg?cb=1390463808][more]]
+
+
+*** orgR, Parse clock table 
+:LOGBOOK:  
+CLOCK: [2014-11-20 Thu 17:11]--[2014-11-20 Thu 17:25] =>  0:14
+:END:      
+[2014-11-17 Mon 17:52]
+#+begin_src R :tangle no
+#### parse org file
+library(stringr)
+library(data.table)
+library(lubridate)
+
+content <- readLines("~/git/org/tmp.org")
+content <- str_trim(content)
+ind.ts <- grep("^\\[[[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2}", content)
+ind.clock.entry <- grep("CLOCK: ", content)
+ind.heading <- grep("^[\\*]+ ", content)
+ind.property <- grep(":PROPERTIES:", content)
+
+
+## format clock data
+clock.entries <- content[ind.clock.entry]
+date <- str_extract_all(clock.entries, "[[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2}")
+time <- str_extract_all(clock.entries, "[[:digit:]]{1,2}\\:[[:digit:]]{1,2}") 
+date.tmp <- do.call(rbind, date)
+time.tmp <- do.call(rbind, time)
+s <- paste(date.tmp[, 1], time.tmp[, 1])
+e <- paste(date.tmp[, 2], time.tmp[, 2])
+duration <- time.tmp[, 3]
+
+                                        # cast to ISO date
+time.date.format <- "%Y-%m-%d %H:%M"
+s <- as.POSIXct(s, format = time.date.format)
+e <- as.POSIXct(e, format = time.date.format)
+duration <- lubridate::minute(lubridate::hm(duration)) ##
+data.table(s, e, duration)
+
+
+## format heading
+headings <- content[ind.heading]
+levels <- str_count(headings, "\\*")
+planning <- content[ind.heading + 1] ## second line of an trying is shceueing/deadilne staff if there is any
+ind.schedule <- grep("SCHEDULED", planning)
+ind.deadline <- grep("DEADLINE", planning)
+
+
+## three types of clock table
+## 1.open ts
+## 2.closed ts
+## 3.last clocked ts
+
+
+inactive.ts.format <- "\\[[0-9]{4}-[0-9]{2}-[0-9]{2} [[:alpha:]]{3} [0-9]{2}:[0-9]{2}\\]"
+ind.closed.ts <- grep("CLOSED", content ) ## closed ts
+ind.open.ts <- grep(paste0("^", inactive.ts.format), content)
+
+
+[2014-11-20 Thu 17:13]
+#+end_src
+
+** NEXT orgR new design
+:LOGBOOK:  
+CLOCK: [2015-03-03 Tue 15:18]--[2015-03-03 Tue 16:58] =>  1:40
+:END:      
+[2015-03-03 Tue 15:18]
+
+
+#+name: object lists 
+#+begin_src plantuml :file ~/tmp2.png
+@startuml
+class Nodes {
+node.id : Integer 
+level : Integer
+line.num : Integer 
+key: "node.id"
+}
+@enduml
+#+end_src 
+
+#+results: object
+[[file:~/tmp2.png]]
+
+
+
+#+begin_src R
+p_todo <- function(node.id = 1,
+                   header = TRUE
+                   exp1 = c("TODO", "DONE"),
+                   exp2 = NULL, 
+                   formatter = f_todo){
+    ## region of this node
+    node.region.start.end <- orgR$node.info[J(node.id), c(start,end)]
+    node.region <- orgR$str[node.region.start.end]
+    if (header)
+        node.region <- node.region[1] ## only interested in the header 
+
+    ## return lines that match expression
+    match.ind <- grep(node.region, pattern = exp1)
+    match.lines <- node.region[match.ind]
+
+    ## post process the lines
+    v <- sapply(match.lines, f_todo)
+    return(v)
+}
+
+p_drawers <- function(node.id = 1,
+                      exp1 = c(":properties:"),
+                      exp2 = c(":END:"), 
+                      formatter = f_todo){
+    ## region of this node
+    node.region.start.end <- orgR$node.info[J(node.id), c(start,end)]
+    node.region <- orgR$str[node.region.start.end]
+    ## return lines that match expression
+    match.ind <- grep(node.region, pattern = exp1)
+    match.lines <- node.region[match.ind]
+    ## post process the lines
+    v <- sapply(match.lines, f_todo)
+    return(v)
+}
+
+str_extract_all(str, patter = c("^*{+} TODO", "^*{+} DONE"))
+
+#+end_src
+| group   | node.id | exp1.keywords         | header = TRUE | exp2           | pre_formatter | example                            | post_formatter | example                  |
+|---------+---------+-----------------------+---------------+----------------+---------------+------------------------------------+----------------+--------------------------|
+| TAG     |         | NULL                  |               | NULL           | TAG           | takes no argument, return ":{.}:$" |                | identity                 |
+| src     |         | "^#\\+begin_src"      |               | "^#\\+END_SRC" |               | identity                           |                | identity                 |
+| clock   |         | "CLOCK: \\["          |               | NULL           |               | identity                           |                | ISO date, with duration  |
+|---------+---------+-----------------------+---------------+----------------+---------------+------------------------------------+----------------+--------------------------|
+| TODO    |         | c("TODO", "DONE")     |               | NULL           | TODO          | c("^*{+} TODO", "^*{+} DONE")      | post_f_todo    | remove starts and spaces |
+| drawers |         | c("proprties", "LOG") |               | "END"          |               | change A to :A:                    |                | identity                 |
+|         |         |                       |               |                |               |                                    |                |                          |
+
+#+begin_src R
+orgR.parser <- function(name){
+res <- lapply(seq_len(nrow(orgR$nodes)), ISO(exp1.keywords[name],
+exp2.keywords[name],
+header.flag[name],
+pre_formatter[name],
+post_formatter[name]))
+
+orgR$parser[[name]] <- res 
+}
+
+orgR_praser_all <- function(){
+lapply(orgR.prase.group, orgR.parser)
+}
+#+end_src
+
+
+
+
+
+how to use it 
+#+begin_src R
+viewClock <- function(parent.node.id,
+                      units = "min"){
+    GetChildrenNodesID <- function(parent.node.id){
+        l <- orgR$nodes[J(parent.node.id), level]
+        tmp <- orgR$nodes[level == l,]
+        end.node <- tmp[which(parent.node.id == node.id) + 1, node.id]
+        tmp[J(partent.node.id : end.node)]
+    }
+    tmp <- GetChildrenNodesID(parten.node.id)
+    p.ts <- ggplot(tmp, aes(start, duration)) + geom_point() + geom_smooth()
+    p.hist <- ggplot(tmp, aes(duration)) + geom_histogram()
+    return(arrangeGrob(p.hist, p.ts))
+}
+#+end_src
+
+
+
+
+#+begin_src R
+orgR_std_parser <- function(node.id = 1,
+                            header = TRUE,
+                            exp1 = c("TODO", "DONE"),
+                            exp2 = NULL,
+                            pre_formatter = NA
+                            post_formatter = f_todo){
+    ## region of this node
+    node.region.start.end <- orgR$node.info[J(node.id), c(start,end)]
+    node.region <- orgR$str[node.region.start.end]
+    if (header)
+        node.region <- node.region[1] ## only interested in the header 
+
+    ## return lines that match expression
+    match.ind <- grep(node.region, pattern = exp1)
+    match.lines <- node.region[match.ind]
+
+    ## post process the lines
+    v <- sapply(match.lines, f_todo)
+    return(v)
+}
+#+end_src
+*** another try
+:LOGBOOK:  
+CLOCK: [2015-03-11 Wed 16:25]--[2015-03-11 Wed 18:33] =>  2:08
+:END:      
+[2015-03-11 Wed 14:07]
+
+#+begin_src plantuml :file img/orgR_2try.png 
+class node.base {
+int node.id 
+int level 
+string headings 
+int start.line.num
+int end.line.num
+searchParents()
+searchChildren()
+searchSiblings()
+searchFamily()
+}
+
+class node.info {
+int node.id 
+int level 
+int line.num 
+string head.line
+string TODO
+string TAGS
+string ARCHIVE 
+string PRIORITY 
+---
+}
+
+node.info --> node.base
+
+class Clock {
+int node.id 
+int level 
+int start.line.num
+int end.line.num
+string headline
+xx start.time
+xx end.time
+numeric duration 
+---
+.. select data ..
++ filter(duration >= 10)
++ period(time1, time2,
+       full.range = TRUE)
+.. calculate data ..
++ average.by.num()
++ average.by.day()
+.. visualisation .. 
++ ggpie(clock1, clock2)
++ viewClock(clock1) 
+
+}
+
+Clock --> node.base
+
+
+#+end_src
+#+results:
+[[file:img/orgR_2try.png]]
+*** Visualization 
+[2015-03-14 Sat 11:43]
+
+
+#+begin_src plentuml 
+
+class VisualiseClock {
+visu.ts.plot(clock, id)
+visu.hist.plot(clock, id)
+visu.pie.plot(clock.id, id, drillDown.level = 1)
+
+compare.ts.plot(clock, ids, by = "col") 
+compare.hist.plot(clock, ids, by = "col") 
+compare.pie.plot(clock.id, id, drillDOwn.level = 1) 
+}
+
+#+end_src
+
+* TODO orgR 0.9.1
+  :PROPERTIES:
+  :EXPORT_FILE_NAME: orgR 0.9.10
+  :END:
+[2014-12-20 Sat 11:37]
+** Log 
+[2015-02-05 Thu 10:41]
+*** Bug 
+[2015-02-05 Thu 10:34]
+bug: 
+- [ ] wday() return 0 - 6, starting on Sunday.
+
+[2014-12-25 Thu 22:34] *QS.org* meant to be bold, but GetHeadlines will return a headline.
+
+*** Changes 
+mainjor change: 
+1. orgR need to know the configration of the org mode. 
+   - [ ] org-time-stamp-formats 
+   - [ ] org-drawers (for properties, logbook etc)
+2. helper function headline.locator, given a line number, it tells it under which headline. 
+3. add worldCloud
+4. clock.table now returns line number, so I can spot the outliers of clocking hours, if is it an mixtakes, I can go to fix it.
+5. speedup org-drawer(), from 4s to 0.1s 
+
+** NEXT [#A] orgR.index() function to decomposite a org file
+:LOGBOOK:  
+CLOCK: [2014-12-28 Sun 12:07]--[2014-12-28 Sun 12:38] =>  0:31
+:END:      
+
+the index() function will return an object with class orgR, esentially it is a list of three elements, 
+- headline.table 
+- drawer.table 
+- timestamp.table 
+
+for a headline.table, it is 
+| id | linum | level | todo | priority | headline | tags |
+|----+-------+-------+------+----------+----------+------|
+|    |       |       |      |          |          |      |
+
+for a drawer.table, it is 
+| id | linum | name      | body | end.linum |
+|----+-------+-----------+------+-----------|
+|  1 |   190 | :LOGBOOK: | str  |           |
+
+
+timestamp.table, it is 
+| id | linum | type     |   |   |
+|----+-------+----------+---+---|
+|    |       | Inactive |   |   |
+|    |       | Active   |   |   |
+
+
+#+begin_src R
+orgR_index <- function(org.file = "~/tmp.org"){
+    head.info <- GetHeadlines(org.file) 
+    clock.table <- GetClockTable(org.file)
+    org.drawer <- orgR_drawers(NULL, readLines(org.file), head.info)
+
+    res <- list(head.info,
+                clock.table,
+                org.drawer)
+    class(res) <-  "orgR"
+    return(res)
+}
+#+end_src
+
+#+results:
+
+** headlines.R 
+[2014-12-15 Mon 11:18]
+
+#+begin_src R :tangle ~/git/orgR/R/headlines.R
+##' ad descrition 
+##'
+##' lalla details
+##' @rdname time.stampe
+##' @title function 
+##' @param str content of a .org file
+##' @param ts.format format of time stamps used in the .org file. It is equivalent to \code{org-time-stamp-formats} in Emacs
+##' @return a 
+##' @export
+##' @author yitang
+GetTS <- function(str = "a", ts.format = c("<%Y-%m-%d %a>", "<%Y-%m-%d %a %H:%M>")){
+    inactive.ts.format <- "\\[[0-9]{4}-[0-9]{2}-[0-9]{2} [[:alpha:]]{3} [0-9]{2}:[0-9]{2}\\]"
+    
+    ts.category <- c(close = "CLOSED: ", dealine = "DEADLINE: ", scheduel = "SCHEDULED: ")
+    ts.entries <- lapply(ts.category, function(i){
+        i.str <- str_extract(str, paste0(i , inactive.ts.format))
+        i.ts <- gsub(i, "", i.str) 
+        return(i.ts)
+    })
+    setDT(ts.entries)
+    return(ts.entries)
+}
+
+
+##' org headlines 
+##'
+##' A function to parse org files, will return headlines and associated attributes, including tag, clock entries, shedules, deadlines, closed date, todo states,
+##' @title Headlines 
+##' @param org.file a file path point to a .org file 
+##' @return a table of headlines and attributes 
+##' @export
+##' @author Yi Tang
+GetHeadlines <- function(org.file = "~/tmp.org"){
+    str <- readLines(org.file) 
+    heading.lines <- grep("^\\*", str)#
+    if (length(heading.lines) == 0){
+        warning("no headlines in ", org.file)
+        return()
+    }
+
+    
+    levels <- str_count(headings, "\\*")
+    ## remove stars from the heading
+    headings <- gsub("^\\*{1, } ", "", headings)
+
+    todo.keywords <- c("TODO", "NEXT", "DONE", "WAITING", "HOLD", "CANCELLED", "PHONE", "MEETING")
+    ## if (is.null(todo.keywords)){
+    ##     str <- strsplit(content, " ")
+    ##     str <- sapply(str, "[", 2)
+    ## }
+    ## must provide todo lists
+
+#### todo states 
+    first.word.in.headings <- str_extract(headings, "[[:alpha:]]{1, }")
+    todo.ind <- first.word.in.headings %in% todo.keywords
+    todo.state <- rep("", len = length(todo.ind))
+    todo.state[todo.ind] <- first.word.in.headings[todo.ind]
+
+#### tags
+    all.tags <- str_extract(headings, ":[[:alpha:]]{+}:")
+    all.tags[is.na(all.tags)] <- ""
+    archive.tag <- ":ARCHIVE:" == all.tags 
+    archive.tag[is.na(archive.tag)] <- FALSE
+
+
+    headings <- str_replace(headings, pattern = todo.state, replace = "")
+    headings <- str_replace(headings, pattern = all.tags, replace = "")
+    headings <- str_trim(headings)
+    
+    the.line.after.heading <- str[heading.lines + 1]
+    plan.ts <- GetTS(str = the.line.after.heading)
+
+    head.info <- data.table(id = 1:length(headings),
+                           heading = headings,
+                           line.num = heading.lines,
+                           level = levels,
+                           todo = todo.state,
+                           tag = all.tags,
+                           archive = archive.tag,
+                           plan.ts)
+    return(head.info)
+}
+
+
+##' Search for parent headlines 
+##'
+##' Given a headlines table and headline id, it will return the parent headlines.
+##' @title search.parent 
+##' @param head.info a head table from GetHeadlings
+##' @param heading.id a unique id from head.info 
+##' @return a data.table 
+##' @export
+##' @author Yi Tang
+search.parent <- function(head.info, heading.id){
+    level.1.ind <- which(head.info$level == 1)
+    dist <- (level.1.ind - heading.id)^2
+    ind <- which.min(dist)
+    nearest.level.1 <- level.1.ind[ind] 
+    head.info[nearest.level.1 : heading.id]
+}
+
+
+## search.parent(head.info, 40)
+
+
+#### tree view of strcutre
+##' Visualise org-mode headings 
+##'
+##' tree structure of org headlines
+##' @title org-headings-tree
+##' @param head.info a data.tabl returned by GetHeadlines()
+##' @param output file to save the results, default setting is to print to scree 
+##' @param plantuml TRUE/FALSE, for plantuml program?
+##' @return a string that can be used in plantuml program
+##' @export
+##' @author Yi Tang
+tree.headings <- function(head.info, output = "screen", plantuml = TRUE){
+    tree.prep <- sapply(head.info$level, function(i) paste(rep("+", i), collapse = ""))
+    tree <- paste(tree.prep, head.info$heading)
+    if (plantuml) 
+        tree <- c("@startuml", "salt", "{", "{T", tree, "}", "}", "@enduml")
+    if (output == "screen")
+        cat(tree, sep = "\n")
+    else
+        cat(tree, sep = "\n", file = output)
+}
+
+## tree.headings(head.info, output = "screen")
+
+#+end_src
+
+#+results:
+
+** clock.table.R  
+[2014-12-15 Mon 12:16]
+
+#+begin_src R :tangle ~/git/orgR/R/clock.table.R
+
+map.clock.heading <- function(clock.ind, heading.vec){#
+    d <- clock.ind - heading.vec#
+    neg.ind <- which(d <= 0)[1]#
+    return(neg.ind - 1 )#
+}
+
+##' Parse clock entry to ISO date 
+##'
+##' 
+##' @title clock.table
+##' @param clock.entries a standard clock entry from org-mode
+##' @return POXICt object
+##' @author Yi Tang
+##' @export
+##' @examples 
+##' str <- c("CLOCK: [2014-11-26 Wed 09:36]--[2014-11-26 Wed 10:04] =>  0:28",
+##'          "CLOCK: [2014-12-04 Thu 15:24]--[2014-12-04 Thu 16:25] =>  1:01")
+##' ToISOdate(str)
+ToISOdate <- function(clock.entries){
+    s <- str_locate_all(clock.entries, "\\[")
+    e <- str_locate_all(clock.entries, "\\]")
+    tmp1 <- rep(NA, len = length(clock.entries))
+    tmp2 <- rep(NA, len = length(clock.entries))
+    for (i in seq_along(clock.entries)){
+        s.i <- s[[i]]
+        e.i <- e[[i]]
+        tmp1[i] <- substr(clock.entries[i], s.i[1, 1] + 1 , e.i[1, 1] - 1)
+        tmp2[i] <- substr(clock.entries[i], s.i[2, 1] + 1, e.i[2, 1] - 1)
+    }
+    res <- list(lubridate::ymd_hm(tmp1),
+                lubridate::ymd_hm(tmp2))
+    return(res)
+}
+
+##' Parse org file
+##'
+##' scan a org file and return the headlines and associated clock entries 
+##' @title clock.table 
+##' @export
+##' @param org.file a org file 
+##' @return a data.table 
+##' @author Yi Tang
+GetClockTable <- function(org.file = "~/tmp.org"){
+    ## org.file <- "~/git/org/tmp.org"
+    str <- readLines(org.file) 
+    heading.lines <- grep("^\\*", str)
+if (length(heading.lines) == 0)
+return()
+    clock.entry.lines <- grep("CLOCK: \\[", str)
+
+
+
+    clock.entries <- str[clock.entry.lines]
+    headings <- str_trim(str[heading.lines])
+
+    ind <- sapply(clock.entry.lines, function(i) map.clock.heading(i, heading.lines))
+    clock.table <- data.table(clock.entries,
+                              line.num = heading.lines[ind],
+                              headings = str[heading.lines[ind]],
+                              head.ind = heading.lines[ind])
+    clock.table$clock.closed <- grepl("--", clock.table$clock.entries)
+
+    ind <- clock.table$clock.closed == TRUE
+    clock.table[ind, c("start", "end") := {
+        ToISOdate(clock.entries)
+    }]
+
+    clock.table[, clock.entries := NULL]
+clock.table[, duration := as.numeric(end - start, unit = "mins")]
+    return(clock.table)
+}
+#+end_src
+
+#+results:
+
+** TODO block.R
+
+#+begin_src R
+##' .. content for \description{} (no empty lines) ..
+##'
+##' .. content for \details{} ..
+##' @title 
+##' @param start block start with #+begin_example, or #+begin_src xxx 
+##' @param end block end with #+end_exmaple or #+end 
+##' @param file.str 
+##' @param head.info 
+##' @return 
+##' @author Yi Tang
+org_block <- function(start, end, file.str, head.info) {
+
+}
+#+end_src
+** DONE org-drawers 
+org-drawers
+Its value is ("PROPERTIES" "CLOCK" "LOGBOOK" "RESULTS") 
+#+begin_src R
+##' .. content for \description{} (no empty lines) ..
+##'
+##' .. content for \details{} ..
+##' @title 
+##' @param drawers drawer names, propert, logbook etc that supposed to have :END: 
+##' @param file.str string of the org file 
+##' @param head.info head infomation of the org file
+##' @return 
+##' @author Yi Tang
+orgR_drawers <- function(drawers = NULL, file.str, head.info){
+    if (length(head.info) == 0)
+        return()
+    if (is.null(drawers))
+        org.drawers <- toupper(c("properties", "clock", "results", "logbook"))
+    org.drawers2 <- paste0(":", org.drawers, ":")
+
+    res1 <- lapply(org.drawers2, function(xx){
+        ind.drawers <- grep(xx, file.str)
+        if (length(ind.drawers) == 0) ## no drawers, return NULL 
+            return(NULL)
+        res <- headline.locator(ind.drawers, head.info)    
+        res[, list(line.num, id, name = xx)]
+    })
+    res1 <- rbindlist(res1) ## what if res is NULL? return Null data.table (0 rows and 0 cols)
+    if(nrow(res1) == 0)
+        return()
+    ind.end <- grep(":END:", file.str)
+    res2 <- headline.locator(ind.end, head.info)  
+    res2$name <- ":END:"
+
+    tmp2 <- rbind(res1, res2)
+    setkey(tmp2, line.num)
+    ## stopifnot(tmp2[c(FALSE, TRUE), unique(name) == ":END:"]) ## each drawer has a :END: line
+    if (tmp2[c(FALSE, TRUE), length(unique(name)) != 1])
+        warning("unclosed drawer at xx")
+    tmp3 <- tmp2[c(TRUE, FALSE), list(head.id = id, start = line.num, name)]
+    tmp3$end <- tmp2[c(FALSE, TRUE), line.num]
+    setcolorder(tmp3, c("head.id", "name", "start", "end"))
+    return(tmp3) 
+}
+#+end_src    
+
+#+results:
+
+
+
+** NEXT worldCloud
+:LOGBOOK:  
+CLOCK: [2014-12-25 Thu 18:47]--[2014-12-25 Thu 19:41] =>  0:54
+CLOCK: [2014-12-25 Thu 17:10]--[2014-12-25 Thu 18:47] =>  1:37
+:END:      
+
+#+begin_src R
+library(tm)
+library(wordcloud)
+
+s <- readLines("~/git/org/life.org")
+
+words.to.exclude <- list(todo.keywords = c("todo", "done", "next", "waiting", "holding", "cancelled"),
+                         org.key.words = c(":logbook:", "\\emsp", ":end:", "clock:", "sun", "sat", "done"),
+                         normal = c("lalala"))
+
+
+s <- removeWords(s, unlist(words.to.exclude))
+s <- tolower(s)
+ap.corpus <- Corpus(DataframeSource(data.frame(s)))
+
+ap.corpus2 <- tm_map(ap.corpus, removePunctuation)
+summary(ap.corpus2)
+
+ap.tdm <- TermDocumentMatrix(ap.corpus2)
+ap.m <- as.matrix(ap.tdm)
+ap.v <- sort(rowSums(ap.m),decreasing=TRUE)
+ap.d <- data.frame(word = names(ap.v),freq=ap.v)
+head(ap.d)
+table(ap.d$freq)
+pal2 <- brewer.pal(8,"Dark2")
+
+wordcloud(ap.d$word,ap.d$freq, scale=c(8,.2),min.freq=2, max.words=Inf, random.order=FALSE, rot.per=.15, colors=pal2)
+
+dev.copy2pdf(file = "~/tmp.pdf", width = 12, height = 6)
+
+w <- as.character(ap.d$word[-1:-4])
+f <- ap.d$freq[-1:-4]
+              
+wordcloud(w, f, scale=c(8,.2),min.freq=5, max.words=Inf, random.order=FALSE, rot.per=.15, colors=pal2)
+dev.copy2pdf(file = "~/tmp2.pdf", width = 12, height = 6)
+
+#+end_src
+- [X] integrate to orgR
+  - [X] clean headings, remove todo key words, tags, etc. 
+    str_replace_all()
+- [X] get body 
+  - [X] helper function 
+    give a line number, f can tell it under which heading. 
+    #+begin_src R
+    headline.locator <- function(line.num, head.info) {
+        x <- data.table(start = line.num, end = line.num, key = c("start", "end"))
+        head.info <- head.info[, list(id, line.start = head.ind)]
+        head.info[, line.end := c(line.start[-1], Inf) - 1]
+        setkey(head.info, line.start, line.end)
+        res <- foverlaps(x, head.info)
+        return(res[, list(line.num, id)])
+    }
+#+end_src
+- [X] extract body from test file 
+  #+begin_src R
+  linum.properties <- tmp3[, start:end, by = rnum]$V1 
+  linum.headlines <- ds$head.ind 
+  s[setdiff(1:length(s), c(linum.properties,
+                           linum.headlines))]
+#+end_src
+** TODO qurery 
+[2015-02-06 Fri 13:01]
+
+- [ ] select *project*, 
+  - [ ] select by headlines, or line.numers
+  - [ ] select by tags (need to check #+filelags: xx)
+- [ ] select by range of date
+  - [ ] generic, between(date1, date2) 
+  - [ ] this week, "2015-W3"
+  - [ ] this month, "2015-02-01" - "2015-03-01" 
+
+** Documentation
+
+Features of Org test files.
+1. Headlines, with lots of attributes,
+   - Levels
+   - TODO states 
+   - Priority
+   - TAGS
+   - Open date 
+   - CLOSED date
+   - SCHEDULED date
+   - DEADLINE date
+   - drawers
+     - clock entry
+     - property-value
+     - notes 
+2. rich body 
+   - ordinary text, sentence, paragraph
+   - code clock
+   - verbatim block (quote, example etc)
+   - embedded latex/html code
+   - (inline) image with attributes 
+   - tables with attributes
+   - hyperlinks
+     - normal
+     - abbr
+   - footnotes 
+
+
+     
+
+** TODO write R function to process clock table
+[2015-02-01 Sun 10:03]
+- [ ] keep sub/total time
+- [ ] fill-in empty space for x.org 
+better to start right, use as.POISct function 

@@ -1,0 +1,33 @@
+
+* Welcome to orgR! 
+
+why it is imoprtant. 
+
+orgR is create to do xxx 
+
+* Features 
+- clock time
+- TODO states 
+- drawers
+- src block
+- Tags
+* Usage 
+[2015-03-11 Wed 16:32]
+
+
+* News:
+- [2015-03-04 Wed 07:50] new decisgn  
+- [2015-03-02 Mon 15:14] release orgR_xxxx
+- [2015-03-02 Mon 15:15] moved he souce to github 
+- [2015-03-02 Mon 15:15] relase orgR_xxx to CRAN 
+
+* Development & download 
+
+feel free to sent a pull request.  
+
+* Liences & Copywite 
+
+orgR was designed and implemented by Yi Tang and is Free Software,
+licensed under the GNU GPLv3.
+
+

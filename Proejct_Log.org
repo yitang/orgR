@@ -1,0 +1,103 @@
+#+PROPERTY: header-args:R  :session *orgR* :width 800 :height 800
+#+STARTUP: indent
+
+
+* 2015-03-11 Wed 
+new design, use plantuml to build up the class. 
+define three class 
+- node.base
+- node.info
+- Clock 
+where both node.info and Clock are derived from node.base. 
+
+implement functions 
+- GetNodeBase(), parse a org file and return a node.base
+- new function to parse clock table, it does not use vectorised technique, but process each node one by one; it is slower, but much easier to understand and write. 
+
+few more functions for Clock 
+- filter.Clock, filter out clock entry by duration, may need it to get ride of outliers.
+- period.Clock, filter out clock entry by two date/time point.
+- fullRange.Clock, is not completed, it fills in NAs for the missing data points between two time.
+- sum.Clock, add up clock entries for all nodes with certain level (1, 2, or xx)
+* 2015-03-12 Thu
+:LOGBOOK:  
+CLOCK: [2015-03-14 Sat 10:54]--[2015-03-15 Sun 19:17] => 32:23
+CLOCK: [2015-03-14 Sat 10:49]--[2015-03-14 Sat 10:53] =>  0:04
+CLOCK: [2015-03-13 Fri 16:57]--[2015-03-14 Sat 10:48] => 17:51
+:END:      
+implemented feww functions for node.base, using tree 
+- search for parent,
+- search for children, 
+- search for siblings,
+- search for family 
+
+based on that, implemented new *usage* function, 
+- sumChildren.Clock, that add up all the clock for a given node and its children.   
+- drillDown.Clock, given a node, add all the for its children, mayjor function used in interactive mode. 
+
+* 2015-03-13 Fri 
+
+- add this Project_Log.org, and records what I have done for the last two days by memoery.  glad I did so, I already have some new ideas for re-factoring.
+- change test.R to main.R, and the new name make more sense.
+
+*basic* data strcture: 
+- add formulateFaimlyTree(), that will split the whole node.tree into sub-group, based on the ancestor's level.
+- addFamilyName(), append nose.base with family name (ancestor's headline), so that the clock time can be group under same name.
+
+*usage* 
+- add =viewByFamily.Clock()=, an extension to =viewClock()=, it will group clock entries first, and then invoke =ggplot=. 
+
+* 2015-03-14 Sat 
+- simplify =viewByFamily.Clock()=, remove pie charts, so it is now simply a extension of =view.Clock()=
+
+#+begin_src R :file img/view.Clock.png :results graphics
+view.Clock(clock.table2)
+#+end_src
+
+#+results:
+[[file:img/view.Clock.png]]
+
+
+#+begin_src R :file img/viewByFamily.Clock.png :results graphics 
+viewByFamily.Clock(clock.table2)
+#+end_src
+
+#+results:
+[[file:img/viewByFamily.Clock.png]]
+* 2015-03-16 Mon
+:LOGBOOK:  
+CLOCK: [2015-03-16 Mon 17:12]--[2015-03-16 Mon 19:00] =>  1:48
+:END:      
+** Usage (visualisation) 
+[2015-03-16 Mon 17:12]
+
+time series plot, and histogram of the every clocking entry, 
+
+=visu.ts.plot()=,
+=visu.hist.plot()=,
+
+for function, it takes an orgClock and node.id, then it plots all the clocking entries. 
+
+for the time series, x-axis is the starting-time, and y axiss is the duration of the instance.  while for histogram, the x-axis is the range of the clock, y-axis shows how many instance falls into that range. 
+
+=visu.pie.plot()=, accumulates the working hours for each sub-group, and then do a pie chart, take eating for example, it shows like this: 
+** comparision 
+[2015-03-16 Mon 17:21]
+
+one may decide to discpline himself or wanna to change a certain behaviour, and orgR provides functionality to chunk clock hours into different periods, 
+
+=subsetPriod.Clock(clock.table2, start.time, end.time)=
+
+it will return a clock.table that is within the starting and ending point.  One interesting example is to look at the time I spent cooking after I changed my afterroon routine 
+
+It also comes with functionality that auto detect the changing points of such points to see whether the it line up with certain beliefs.  
+
+it looks like this: 
+
+- the first period, I have to walk down to antoher office to get a life with my collguge, it takes me about 30 minutes,  there's a peak that's is bouat 45 mintues, is when we leave early and stuck with the school traffic. 
+
+- the second period, is when we merge the two office, and we just walked down to the neasest car park, and things becomes smoother, but it shows we takes slight more time in the morning, I think because it is in the December, one of the most unproductive period during the year, and we are not rush to the office in the monring.  
+
+- the last seession is about christmax/new year, where my flatmate goes to holiday whileas I work during this period, and have to take the unrealiable bus, in the morning, sometimes other colluge gives me a lift.  
+
+the data shows my commuting time from 2014-11-18 to 2014-12-24, christmax eve, exlcuing weekend and day off. 
