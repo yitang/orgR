@@ -1,0 +1,1497 @@
+* Sleep 
+:LOGBOOK:
+CLOCK: [2014-11-26 Wed 23:24]--[2014-11-27 Thu 07:53] =>  8:29
+CLOCK: [2014-11-16 Sun 22:27]--[2014-11-17 Mon 07:27] =>  9:00
+CLOCK: [2014-11-15 Sat 22:47]--[2014-11-16 Sun 08:45] =>  9:58
+CLOCK: [2014-11-14 Fri 23:19]--[2014-11-15 Sat 07:30] =>  8:11
+CLOCK: [2014-11-13 Thu 22:22]--[2014-11-14 Fri 07:14] =>  8:52
+CLOCK: [2014-11-12 Wed 23:02]--[2014-11-13 Thu 08:28] =>  9:26
+CLOCK: [2014-11-11 Tue 21:48]--[2014-11-12 Wed 08:14] => 10:26
+CLOCK: [2014-11-10 Mon 23:34]--[2014-11-11 Tue 07:46] =>  8:12
+CLOCK: [2014-11-10 Mon 00:00]--[2014-11-10 Mon 07:00] =>  7:00
+CLOCK: [2014-11-09 Sun 00:00]--[2014-11-09 Sun 08:48] =>  8:48
+CLOCK: [2014-11-08 Sat 00:30]--[2014-11-08 Sat 09:35] =>  9:05
+CLOCK: [2014-11-05 Wed 23:14]--[2014-11-06 Thu 07:00] =>  7:46
+CLOCK: [2014-11-04 Tue 23:39]--[2014-11-05 Wed 07:00] =>  7:21
+CLOCK: [2014-11-03 Mon 23:31]--[2014-11-04 Tue 07:00] =>  7:29
+CLOCK: [2014-11-02 Sun 22:47]--[2014-11-03 Mon 07:00] =>  8:13
+CLOCK: [2014-11-01 Sat 23:07]--[2014-11-02 Sun 07:00] =>  7:53
+CLOCK: [2014-10-24 Fri 22:30]--[2014-10-25 Sat 09:45] => 11:15
+CLOCK: [2014-10-23 Thu 23:30]--[2014-10-24 Fri 07:30] =>  8:00
+CLOCK: [2014-10-22 Wed 23:09]--[2014-10-23 Thu 07:54] =>  8:45
+CLOCK: [2014-10-21 Tue 22:45]--[2014-10-22 Wed 07:25] =>  8:40
+CLOCK: [2014-10-20 Mon 22:14]--[2014-10-21 Tue 07:30] =>  9:16
+CLOCK: [2014-10-19 Sun 22:45]--[2014-10-20 Mon 07:05] =>  8:20
+:END:
+:PROPERTIES:
+:ID:       09A123D5-8509-435D-BCFD-AE32B5413DE3
+:END:
+** sleep
+    :LOGBOOK:  
+    CLOCK: [2014-11-25 Tue 22:53]--[2014-11-26 Wed 07:30] =>  8:37
+    :END:      
+** Sleep
+:LOGBOOK:
+CLOCK: [2014-11-30 Sun 22:39]--[2014-12-01 Mon 07:00] => 08:21
+:END:
+[2014-11-30 Sun 22:39]
+A
+** Sleep
+:LOGBOOK:  
+CLOCK: [2014-12-23 Tue 22:04]--[2014-12-24 Wed 07:29] =>  9:25
+:END:      
+
+** sleep 
+:LOGBOOK:  
+CLOCK: [2014-11-17 Mon 23:06]--[2014-11-18 Tue 07:32] =>  8:26
+:END:      
+[2014-11-17 Mon 23:06]
+** sleep
+:LOGBOOK:  
+CLOCK: [2014-11-18 Tue 23:09]--[2014-11-19 Wed 07:50] =>  8:41
+:END:      
+[2014-11-19 Wed 22:19]
+** sleeeeep
+:LOGBOOK:  
+CLOCK: [2014-11-22 Sat 22:00]--[2014-11-23 Sun 10:00] => 12:00
+:END:      
+[2014-11-23 Sun 21:43]
+** Sleep
+:LOGBOOK:  
+CLOCK: [2014-11-24 Mon 22:22]--[2014-11-25 Tue 07:06] =>  8:44
+:END:      
+[2014-11-24 Mon 22:22]
+
+** Sunday, sleep
+:LOGBOOK:  
+CLOCK: [2014-11-23 Sun 21:52]--[2014-11-24 Mon 07:30] =>  9:38
+:END:      
+[2014-11-23 Sun 21:52]
+** sleep 
+:LOGBOOK:  
+CLOCK: [2014-11-21 Fri 23:45]--[2014-11-22 Sat 08:30] =>  8:45
+:END:      
+[2014-11-27 Thu 19:55]
+** sleep
+:LOGBOOK:  
+CLOCK: [2014-11-27 Thu 22:45]--[2014-11-28 Fri 07:00] =>  8:15
+:END:      
+[2014-11-27 Thu 22:45]
+
+** sleep
+:LOGBOOK:  
+CLOCK: [2014-11-29 Sat 23:19]--[2014-11-30 Sun 08:00] =>  8:41
+:END:      
+[2014-11-29 Sat 23:19]
+** sleep
+:LOGBOOK:  
+CLOCK: [2014-11-28 Fri 23:19]--[2014-11-29 Sat 10:06] => 10:47
+:END:      
+[2014-11-28 Fri 23:19]
+
+** sleep
+:LOGBOOK:  
+CLOCK: [2014-12-01 Mon 23:21]--[2014-12-02 Tue 07:06] =>  7:45
+:END:      
+[2014-12-02 Tue 07:53]
+** sleep 
+:LOGBOOK:  
+CLOCK: [2014-12-02 Tue 22:33]--[2014-12-03 Wed 06:59] =>  8:26
+:END:      
+
+** sleep 
+:LOGBOOK:  
+CLOCK: [2014-12-06 Sat 00:10]--[2014-12-06 Sat 09:31] =>  9:21
+:END:      
+** sleep 
+:LOGBOOK:  
+CLOCK: [2014-12-03 Wed 23:00]--[2014-12-04 Thu 07:06] =>  8:06
+:END:      
+
+** sleep 
+:LOGBOOK:  
+CLOCK: [2014-12-06 Sat 23:31]--[2014-12-07 Sun 08:15] =>  8:44
+:END:      
+[2014-12-06 Sat 23:31]
+
+** sleep 
+:LOGBOOK:  
+CLOCK: [2014-12-07 Sun 23:34]--[2014-12-08 Mon 07:25] =>  7:51
+:END:      
+[2014-12-07 Sun 23:34]
+
+** have sleep 
+:LOGBOOK:  
+CLOCK: [2014-12-08 Mon 23:00]--[2014-12-09 Tue 07:25] =>  8:25
+:END:      
+[2014-12-08 Mon 23:00]
+
+
+** sleep
+:LOGBOOK:  
+CLOCK: [2014-12-09 Tue 23:12]--[2014-12-10 Wed 07:35] =>  8:23
+:END:      
+[2014-12-09 Tue 23:12]
+
+** sleep 
+:LOGBOOK:  
+CLOCK: [2014-12-10 Wed 22:47]--[2014-12-11 Thu 07:40] =>  8:53
+:END:      
+[2014-12-10 Wed 22:46]
+
+
+** sleep 
+:LOGBOOK:  
+CLOCK: [2014-12-13 Sat 00:22]--[2014-12-13 Sat 08:00] =>  7:38
+:END:      
+[2014-12-13 Sat 00:32]
+** have sleep
+:LOGBOOK:  
+CLOCK: [2014-12-13 Sat 23:49]--[2014-12-14 Sun 09:44] =>  9:55
+:END:      
+[2014-12-13 Sat 23:49]
+** DONE sleep
+CLOSED: [2014-12-14 Sun 20:58]
+:LOGBOOK:  
+CLOCK: [2014-12-11 Thu 23:08]--[2014-12-12 Fri 07:30] =>  8:22
+:END:      
+[2014-12-14 Sun 20:57]
+
+** sleep
+:LOGBOOK:  
+CLOCK: [2014-12-17 Wed 23:03]--[2014-12-18 Thu 07:50] =>  8:47
+:END:      
+[2014-12-17 Wed 23:03]
+** sleep at night 
+:LOGBOOK:  
+CLOCK: [2014-12-16 Tue 22:39]--[2014-12-17 Wed 07:10] =>  8:31
+:END:      
+[2014-12-17 Wed 07:34]
+** ssseeesleep
+:LOGBOOK:  
+CLOCK: [2014-12-15 Mon 22:51]--[2014-12-16 Tue 09:09] => 10:18
+:END:      
+[2014-12-15 Mon 22:51]
+
+** sleeppp 
+:LOGBOOK:  
+CLOCK: [2014-12-19 Fri 23:42]--[2014-12-20 Sat 08:50] =>  9:08
+:END:      
+[2014-12-19 Fri 23:41]
+** ssleeep
+:LOGBOOK:  
+CLOCK: [2014-12-18 Thu 22:27]--[2014-12-19 Fri 09:25] => 11:54
+:END:      
+[2014-12-18 Thu 22:27]
+** sleeep 
+:LOGBOOK:  
+CLOCK: [2014-12-22 Mon 22:52]--[2014-12-23 Tue 08:24] =>  9:32
+:END:      
+[2014-12-22 Mon 22:52]
+** sleep 
+:LOGBOOK:  
+CLOCK: [2014-12-21 Sun 23:00]--[2014-12-22 Mon 06:45] =>  7:45
+:END:      
+[2014-12-22 Mon 07:11]
+** TODO sleeeep
+:LOGBOOK:  
+CLOCK: [2014-12-21 Sun 00:10]--[2014-12-21 Sun 10:20] => 10:10
+:END:      
+[2014-12-21 Sun 00:10]
+** Sleep
+:LOGBOOK:  
+CLOCK: [2014-12-27 Sat 00:17]--[2014-12-27 Sat 08:36] =>  8:19
+:END:      
+[2014-12-27 Sat 00:16]
+** sleep 
+:LOGBOOK:  
+CLOCK: [2014-12-28 Sun 00:18]--[2014-12-28 Sun 08:54] =>  8:36
+:END:      
+[2014-12-28 Sun 00:20]
+** sleep 
+:LOGBOOK:  
+CLOCK: [2015-01-05 Mon 23:10]--[2015-01-06 Tue 07:52] =>  8:42
+:END:      
+[2015-01-06 Tue 07:52]
+** DONE sleep
+CLOSED: [2015-01-30 Fri 16:18]
+:LOGBOOK:  
+CLOCK: [2015-01-07 Wed 22:15]--[2015-01-08 Thu 07:48] =>  9:33
+:END:      
+[2015-01-07 Wed 20:08]
+
+** ssleep w
+:LOGBOOK:  
+CLOCK: [2014-12-25 Thu 23:31]--[2014-12-26 Fri 09:47] => 10:16
+:END:      
+[2014-12-25 Thu 23:31]
+
+
+
+** sleep 
+:LOGBOOK:  
+CLOCK: [2014-12-24 Wed 22:02]--[2014-12-25 Thu 08:40] => 10:38
+:END:      
+[2014-12-25 Thu 09:02]
+** DONE sleep
+CLOSED: [2014-12-27 Sat 00:04] SCHEDULED: <2014-12-25 Thu 22:00>
+[2014-12-25 Thu 16:09]
+** sleep
+:LOGBOOK:  
+CLOCK: [2014-12-28 Sun 23:40]--[2014-12-29 Mon 07:16] =>  7:57
+:END:      
+[2014-12-28 Sun 23:40]
+** sleep 
+:LOGBOOK:  
+CLOCK: [2014-12-30 Tue 22:25]--[2014-12-31 Wed 07:36] =>  9:11
+:END:      
+[2014-12-30 Tue 22:25]
+** sleep 
+:LOGBOOK:  
+CLOCK: [2015-01-01 Thu 00:29]--[2015-01-01 Thu 09:30] =>  9:01
+:END:      
+[2015-01-01 Thu 00:29]
+** SLEEP
+:LOGBOOK:  
+CLOCK: [2015-01-02 Fri 23:32]--[2015-01-03 Sat 10:46] => 11:14
+:END:      
+[2015-01-02 Fri 23:32]
+** NEXT sleep
+:LOGBOOK:  
+CLOCK: [2015-01-04 Sun 00:04]--[2015-01-04 Sun 08:30] =>  8:26
+:END:      
+[2015-01-04 Sun 00:04]
+** sleep 
+:LOGBOOK:  
+CLOCK: [2015-01-04 Sun 23:03]--[2015-01-05 Mon 07:45] =>  8:42
+:END:      
+[2015-01-04 Sun 23:03]
+** sleep 
+:LOGBOOK:  
+CLOCK: [2015-01-06 Tue 23:00]--[2015-01-07 Wed 07:59] =>  8:52
+:END:      
+[2015-01-06 Tue 23:00]
+** DONE sleep
+CLOSED: [2015-01-10 Sat 10:48]
+:LOGBOOK:  
+CLOCK: [2015-01-09 Fri 23:02]--[2015-01-10 Sat 08:00] =>  8:58
+:END:      
+[2015-01-10 Sat 10:47]
+
+** DONE sleep
+CLOSED: [2015-01-11 Sun 15:32]
+:LOGBOOK:  
+CLOCK: [2015-01-10 Sat 23:39]--[2015-01-11 Sun 09:00] =>  9:21
+:END:      
+[2015-01-10 Sat 23:39]
+** DONE sleep
+CLOSED: [2015-01-12 Mon 09:39]
+:LOGBOOK:  
+CLOCK: [2015-01-11 Sun 22:45]--[2015-01-12 Mon 07:30] =>  8:45
+:END:      
+[2015-01-11 Sun 22:45]
+
+** DONE sleep
+CLOSED: [2015-01-13 Tue 11:51]
+:LOGBOOK:  
+CLOCK: [2015-01-12 Mon 22:47]--[2015-01-13 Tue 07:30] =>  8:43
+:END:      
+[2015-01-12 Mon 22:47]
+
+** DONE sleep
+CLOSED: [2015-01-16 Fri 08:51]
+:LOGBOOK:  
+CLOCK: [2015-01-15 Thu 22:05]--[2015-01-16 Fri 08:51] => 10:46
+:END:      
+[2015-01-15 Thu 22:05]
+
+** sleep
+:LOGBOOK:  
+CLOCK: [2015-01-14 Wed 23:13]--[2015-01-15 Thu 07:20] =>  8:07
+:END:      
+[2015-01-14 Wed 23:13]
+** DONE sleep
+CLOSED: [2015-01-18 Sun 21:38]
+:LOGBOOK:  
+CLOCK: [2015-01-17 Sat 23:58]--[2015-01-18 Sun 08:30] => 10:31
+:END:      
+[2015-01-17 Sat 23:58]
+** DONE sleep
+CLOSED: [2015-01-18 Sun 21:39]
+:LOGBOOK:  
+CLOCK: [2015-01-17 Sat 00:43]--[2015-01-17 Sat 09:55] =>  9:12
+:END:      
+[2015-01-17 Sat 00:43]
+** DONE sleep
+CLOSED: [2015-01-18 Sun 21:40]
+:LOGBOOK:  
+CLOCK: [2015-01-15 Thu 22:05]--[2015-01-16 Fri 07:26] =>  9:21
+:END:      
+[2015-01-15 Thu 22:05]
+** DONE sleep
+CLOSED: [2015-01-19 Mon 07:39]
+:LOGBOOK:  
+CLOCK: [2015-01-18 Sun 23:45]--[2015-01-19 Mon 07:39] =>  7:54
+:END:      
+[2015-01-18 Sun 23:45]
+** sleep please delete-me                                            :PHONE:
+
+[2015-01-27 Tue 11:12]
+** [2015-01-29 Thu] Sleep  
+:LOGBOOK:  
+CLOCK: [2015-01-29 Thu 01:09]--[2015-01-29 Thu 09:00] =>  7:51
+:END:      
+[2015-01-29 Thu 01:09]
+** DONE sleep
+CLOSED: [2015-01-27 Tue 00:29]
+:LOGBOOK:  
+CLOCK: [2015-01-26 Mon 16:32]--[2015-01-27 Tue 00:02] =>  8:00
+:END:      
+[2015-01-27 Tue 00:02]
+** DONE sleep
+CLOSED: [2015-01-29 Thu 11:09]
+:LOGBOOK:  
+CLOCK: [2015-01-21 Wed 23:15]--[2015-01-22 Thu 08:03] =>  8:48
+:END:      
+[2015-01-22 Thu 08:03]
+** DONE sleep
+CLOSED: [2015-01-29 Thu 11:10]
+:LOGBOOK:  
+CLOCK: [2015-01-19 Mon 23:40]--[2015-01-20 Tue 06:30] =>  6:50
+:END:      
+[2015-01-19 Mon 23:40]
+** DONE sleep
+CLOSED: [2015-01-29 Thu 11:17]
+:LOGBOOK:  
+CLOCK: [2015-01-26 Mon 00:01]--[2015-01-26 Mon 07:26] =>  7:25
+:END:      
+[2015-01-26 Mon 06:41]
+** [2015-01-30 Fri] Sleep  
+:LOGBOOK:  
+CLOCK: [2015-01-30 Fri 02:00]--[2015-01-30 Fri 08:57] =>  6:57
+:END:      
+[2015-01-30 Fri 08:57]
+** [2015-01-31 Sat] Sleep  
+:LOGBOOK:  
+CLOCK: [2015-01-31 Sat 03:15]--[2015-01-31 Sat 11:15] =>  8:00
+:END:      
+[2015-01-31 Sat 11:15]
+** [2015-02-01 Sun] Sleep  
+:LOGBOOK:  
+CLOCK: [2015-02-01 Sun 02:41]--[2015-02-01 Sun 09:35] =>  6:54
+:END:      
+[2015-02-01 Sun 02:41]
+** [2015-02-02 Mon] Sleep  
+:LOGBOOK:  
+CLOCK: [2015-02-01 Sun 23:30]--[2015-02-02 Mon 10:15] => 10:45
+:END:      
+[2015-02-02 Mon 11:26]
+** [2015-02-03 Tue] Sleep  
+:LOGBOOK:  
+CLOCK: [2015-02-02 Mon 23:52]--[2015-02-03 Tue 09:06] =>  9:14
+:END:      
+[2015-02-03 Tue 10:32]
+** [2015-02-06 Fri] Sleep  
+:LOGBOOK:  
+CLOCK: [2015-02-05 Thu 01:05]--[2015-02-05 Thu 09:40] =>  8:35
+:END:      
+[2015-02-06 Fri 01:10]
+** [2015-02-06 Fri] Sleep  
+:LOGBOOK:  
+CLOCK: [2015-02-06 Fri 03:26]--[2015-02-06 Fri 11:46] =>  8:20
+:END:      
+[2015-02-06 Fri 12:11]
+** [2015-02-07 Sat] Sleep  
+:LOGBOOK:  
+CLOCK: [2015-02-07 Sat 01:17]--[2015-02-07 Sat 11:16] =>  9:59
+:END:      
+[2015-02-07 Sat 23:31]
+** [2015-02-08 Sun] Sleep  
+:LOGBOOK:  
+CLOCK: [2015-02-08 Sun 01:10]--[2015-02-08 Sun 10:18] =>  9:08
+:END:      
+[2015-02-08 Sun 00:15]
+** [2015-02-09 Mon] Sleep  
+:LOGBOOK:  
+CLOCK: [2015-02-08 Sun 23:02]--[2015-02-09 Mon 10:15] => 11:13
+:END:      
+[2015-02-09 Mon 11:01]
+** [2015-02-10 Tue] Sleep  
+:LOGBOOK:  
+CLOCK: [2015-02-10 Tue 01:27]--[2015-02-10 Tue 10:38] =>  9:11
+:END:      
+[2015-02-10 Tue 01:27]
+** [2015-02-12 Thu] Sleep  
+:LOGBOOK:  
+CLOCK: [2015-02-12 Thu 00:25]--[2015-02-12 Thu 10:27] => 10:02
+:END:      
+[2015-02-12 Thu 10:26]
+** [2015-02-13 Fri] Sleep  
+:LOGBOOK:  
+CLOCK: [2015-02-13 Fri 01:14]--[2015-02-13 Fri 11:05] =>  9:51
+:END:      
+[2015-02-13 Fri 13:58]
+
+* Eat
+:PROPERTIES:
+:CATEGORY: Eat
+:END:
+** Breakfast
+:LOGBOOK:
+CLOCK: [2014-11-17 Mon 07:20]--[2014-11-17 Mon 07:50] =>  0:30
+CLOCK: [2014-11-16 Sun 09:16]--[2014-11-16 Sun 09:36] =>  0:20
+CLOCK: [2014-11-11 Tue 07:46]--[2014-11-11 Tue 07:58] =>  0:12
+CLOCK: [2014-11-12 Wed 08:14]--[2014-11-12 Wed 08:46] =>  0:32
+CLOCK: [2014-11-09 Sun 09:57]--[2014-11-09 Sun 10:35] =>  2:07
+CLOCK: [2014-11-05 Wed 07:39]--[2014-11-05 Wed 07:45] =>  0:06
+CLOCK: [2014-11-04 Tue 07:48]--[2014-11-04 Tue 08:05] =>  0:17
+CLOCK: [2014-11-02 Sun 08:25]--[2014-11-02 Sun 08:42] =>  0:17
+:END:
+*** breakfast 
+:LOGBOOK:  
+CLOCK: [2014-11-18 Tue 07:33]--[2014-11-18 Tue 07:59] =>  0:26
+:END:      
+[2014-11-18 Tue 07:33]
+milk, granola, egg, and coffee
+*** breakfast
+:LOGBOOK:  
+CLOCK: [2014-11-23 Sun 10:00]--[2014-11-23 Sun 10:24] =>  0:24
+:END:      
+[2014-11-23 Sun 21:35]
+*** breakfast 
+:LOGBOOK:  
+CLOCK: [2014-11-25 Tue 07:06]--[2014-11-25 Tue 07:27] =>  0:21
+:END:      
+[2014-11-25 Tue 22:48]
+*** Eat breakfast 
+:LOGBOOK:
+CLOCK: [2014-11-26 Wed 07:38]--[2014-11-26 Wed 08:09] =>  0:31
+:END:
+[2014-11-26 Wed 07:38]
+*** have breakfast 
+:LOGBOOK:  
+CLOCK: [2014-11-28 Fri 07:20]--[2014-11-28 Fri 07:45] =>  0:25
+:END:      
+[2014-11-28 Fri 08:29]
+
+
+*** have breakfast 
+:LOGBOOK:  
+CLOCK: [2014-11-29 Sat 09:27]--[2014-11-29 Sat 09:57] =>  0:30
+:END:      
+[2014-11-29 Sat 10:41]
+*** have breakfast 
+:LOGBOOK:  
+CLOCK: [2014-11-30 Sun 08:45]--[2014-11-30 Sun 09:15] =>  0:30
+:END:      
+[2014-11-30 Sun 09:15]
+*** Eat breakfast 
+:LOGBOOK:
+CLOCK: [2014-12-01 Mon 07:25]--[2014-12-01 Mon 07:59] => 00:34
+:END:
+[2014-12-01 Mon 07:25]
+
+*** have brekafast 
+:LOGBOOK:  
+CLOCK: [2014-12-03 Wed 07:00]--[2014-12-03 Wed 07:30] =>  0:30
+:END:      
+[2014-12-03 Wed 07:58]
+
+*** breakfast 
+:LOGBOOK:  
+CLOCK: [2014-12-02 Tue 07:06]--[2014-12-02 Tue 07:36] =>  0:30
+:END:      
+[2014-12-02 Tue 07:53]
+*** org and have breakfast 
+:LOGBOOK:  
+CLOCK: [2014-12-06 Sat 09:32]--[2014-12-06 Sat 10:08] =>  0:36
+:END:      
+
+*** org/brekafast 
+:LOGBOOK:  
+CLOCK: [2014-12-04 Thu 07:06]--[2014-12-04 Thu 07:30] =>  0:24
+:END:      
+
+
+*** org and have breakfast 
+:LOGBOOK:  
+CLOCK: [2014-12-07 Sun 09:10]--[2014-12-07 Sun 09:55] =>  0:45
+:END:      
+[2014-12-07 Sun 09:50]
+
+*** org and have breakfast
+:LOGBOOK:  
+CLOCK: [2014-12-08 Mon 07:25]--[2014-12-08 Mon 08:10] =>  0:45
+:END:      
+[2014-12-08 Mon 08:07]
+
+*** org and have breakast
+:LOGBOOK:  
+CLOCK: [2014-12-10 Wed 07:35]--[2014-12-10 Wed 08:06] =>  0:31
+:END:      
+[2014-12-10 Wed 12:37]
+*** org and have breakfast 
+:LOGBOOK:  
+CLOCK: [2014-12-09 Tue 07:25]--[2014-12-09 Tue 08:04] =>  0:39
+:END:      
+[2014-12-09 Tue 07:55]
+
+
+
+*** org and have breakfast 
+:LOGBOOK:  
+CLOCK: [2014-12-11 Thu 07:40]--[2014-12-11 Thu 08:05] =>  0:25
+:END:      
+[2014-12-11 Thu 22:11]
+
+*** org and have breakfast 
+:LOGBOOK:  
+CLOCK: [2014-12-12 Fri 07:30]--[2014-12-12 Fri 08:00] =>  0:30
+:END:      
+[2014-12-11 Thu 23:00]
+*** have breakfast
+:LOGBOOK:  
+CLOCK: [2014-12-13 Sat 08:55]--[2014-12-13 Sat 09:30] =>  0:35
+:END:      
+[2014-12-13 Sat 12:20]
+
+*** brekfast and org 
+:LOGBOOK:  
+CLOCK: [2014-12-14 Sun 09:44]--[2014-12-14 Sun 10:30] =>  0:41
+:END:      
+[2014-12-14 Sun 09:44]
+
+
+
+*** have breakfast
+:LOGBOOK:  
+CLOCK: [2014-12-17 Wed 07:26]--[2014-12-17 Wed 08:00] =>  0:34
+:END:      
+[2014-12-17 Wed 07:35]
+*** breakfast 
+:LOGBOOK:  
+CLOCK: [2014-12-15 Mon 07:24]--[2014-12-15 Mon 07:55] =>  0:31
+:END:      
+[2014-12-15 Mon 07:24]
+*** org and have breakfast 
+:LOGBOOK:  
+CLOCK: [2014-12-19 Fri 09:35]--[2014-12-19 Fri 10:00] =>  0:25
+:END:      
+[2014-12-19 Fri 10:22]
+*** have breakfast
+:LOGBOOK:  
+CLOCK: [2014-12-20 Sat 09:23]--[2014-12-20 Sat 10:11] =>  0:48
+:END:      
+:PROPERTIES:
+:Effort:   0:00
+:END:
+[2014-12-20 Sat 11:00]
+*** org and beakfast csslep
+:LOGBOOK:  
+CLOCK: [2014-12-23 Tue 08:28]--[2014-12-23 Tue 08:53] =>  0:25
+:END:      
+[2014-12-23 Tue 08:28]
+*** breakfast 
+:LOGBOOK:  
+CLOCK: [2014-12-22 Mon 07:15]--[2014-12-22 Mon 07:33] =>  0:18
+:END:      
+[2014-12-22 Mon 07:33]
+*** TODO have breakfast  
+:LOGBOOK:  
+CLOCK: [2014-12-21 Sun 10:50]--[2014-12-21 Sun 11:09] =>  0:19
+:END:      
+[2014-12-21 Sun 11:00]
+*** breakfast 
+:LOGBOOK:  
+CLOCK: [2014-12-24 Wed 07:29]--[2014-12-24 Wed 07:49] =>  0:20
+:END:      
+[2014-12-24 Wed 09:32]
+*** have brakfast 
+:LOGBOOK:  
+CLOCK: [2014-12-27 Sat 08:54]--[2014-12-27 Sat 09:32] =>  0:38
+:END:      
+[2014-12-27 Sat 08:55]
+*** breakfast 
+:LOGBOOK:  
+CLOCK: [2014-12-28 Sun 09:20]--[2014-12-28 Sun 09:51] =>  0:31
+:END:      
+[2014-12-28 Sun 09:51]
+*** DONE have breakfast
+CLOSED: [2015-01-04 Sun 09:22] SCHEDULED: <2015-01-04 Sun 08:00-08:30>
+:LOGBOOK:  
+CLOCK: [2015-01-04 Sun 08:30]--[2015-01-04 Sun 09:22] =>  0:52
+:END:      
+[2015-01-03 Sat 23:53]
+
+*** DONE [#A] fantastic brakfast
+CLOSED: [2015-01-07 Wed 19:22] SCHEDULED: <2015-01-07 Wed 07:00-07:30>
+:LOGBOOK:  
+CLOCK: [2015-01-07 Wed 07:40]--[2015-01-07 Wed 08:06] =>  0:26
+:END:      
+[2015-01-06 Tue 22:41]
+
+*** breakfast 
+:LOGBOOK:  
+CLOCK: [2014-12-25 Thu 09:16]--[2014-12-25 Thu 09:40] =>  0:24
+:END:      
+[2014-12-25 Thu 09:40]
+*** breakfast 
+:LOGBOOK:  
+CLOCK: [2014-12-31 Wed 07:54]--[2014-12-31 Wed 19:54] => 12:00
+:END:      
+[2014-12-31 Wed 07:54]
+*** breakf fast 
+:LOGBOOK:  
+CLOCK: [2015-01-04 Sun 08:30]--[2015-01-04 Sun 09:21] =>  0:51
+:END:      
+[2015-01-04 Sun 09:05]
+*** DONE breakfast
+CLOSED: [2015-01-08 Thu 07:48]
+:LOGBOOK:  
+CLOCK: [2015-01-08 Thu 07:20]--[2015-01-08 Thu 07:49] =>  0:29
+:END:      
+[2015-01-08 Thu 07:48]
+
+*** DONE breakfast
+CLOSED: [2015-01-29 Thu 10:54] SCHEDULED: <2015-01-09 Fri 07:00-07:30>
+[2015-01-08 Thu 19:30]
+
+*** DONE breakfast
+CLOSED: [2015-01-10 Sat 10:49] SCHEDULED: <2015-01-10 Sat 08:00-08:30>
+:LOGBOOK:  
+CLOCK: [2015-01-10 Sat 10:00]--[2015-01-10 Sat 10:30] =>  0:44
+:END:      
+[2015-01-09 Fri 23:00]
+
+
+*** DONE breakfast
+CLOSED: [2015-01-11 Sun 10:45]
+:LOGBOOK:  
+CLOCK: [2015-01-11 Sun 09:50]--[2015-01-11 Sun 10:20] =>  0:30
+:END:      
+[2015-01-11 Sun 09:50]
+
+*** have breakfast 
+:LOGBOOK:  
+CLOCK: [2015-01-18 Sun 10:31]--[2015-01-18 Sun 10:55] =>  0:24
+:END:      
+[2015-01-18 Sun 11:34]
+*** breakfast
+:LOGBOOK:  
+CLOCK: [2015-01-17 Sat 10:05]--[2015-01-17 Sat 10:25] =>  0:20
+:END:      
+[2015-01-17 Sat 10:07]
+*** DONE have brakfast
+CLOSED: [2015-01-26 Mon 10:27]
+:LOGBOOK:  
+CLOCK: [2015-01-26 Mon 01:17]--[2015-01-26 Mon 02:20] =>  1:03
+:END:      
+[2015-01-26 Mon 01:17]
+really hungry 
+*** [2015-01-29 Thu] Eat Breakfast  
+:LOGBOOK:  
+CLOCK: [2015-01-29 Thu 09:00]--[2015-01-29 Thu 09:30] =>  0:30
+:END:      
+[2015-01-29 Thu 10:47]
+*** DONE have breakfast
+CLOSED: [2015-01-29 Thu 11:06]
+:LOGBOOK:  
+CLOCK: [2015-01-27 Tue 01:19]--[2015-01-27 Tue 03:04] =>  1:45
+:END:      
+[2015-01-27 Tue 01:19]
+*** [2015-02-01 Sun] Eat Breakfast  
+:LOGBOOK:  
+CLOCK: [2015-02-01 Sun 09:35]--[2015-02-01 Sun 09:56] =>  0:21
+:END:      
+[2015-02-01 Sun 09:56]
+*** [2015-02-02 Mon] Eat Breakfast  
+:LOGBOOK:  
+CLOCK: [2015-02-02 Mon 10:15]--[2015-02-02 Mon 10:45] =>  0:30
+:END:      
+[2015-02-02 Mon 11:28]
+*** [2015-02-03 Tue] Eat Breakfast  
+:LOGBOOK:  
+CLOCK: [2015-02-03 Tue 09:44]--[2015-02-03 Tue 10:00] =>  0:16
+:END:      
+[2015-02-03 Tue 10:31]
+*** [2015-02-04 Wed] Eat Breakfast  
+:LOGBOOK:  
+CLOCK: [2015-02-04 Wed 10:03]--[2015-02-04 Wed 10:22] =>  0:19
+:END:      
+[2015-02-04 Wed 11:52]
+*** [2015-02-06 Fri] Eat Breakfast  
+:LOGBOOK:  
+CLOCK: [2015-02-05 Thu 09:40]--[2015-02-05 Thu 10:20] =>  0:40
+:END:      
+[2015-02-06 Fri 01:12]
+*** [2015-02-06 Fri] Eat Breakfast  
+:LOGBOOK:  
+CLOCK: [2015-02-06 Fri 11:46]--[2015-02-06 Fri 12:12] =>  0:26
+:END:      
+[2015-02-06 Fri 12:12]
+*** [2015-02-08 Sun] Eat Breakfast  
+:LOGBOOK:  
+CLOCK: [2015-02-08 Sun 10:50]--[2015-02-08 Sun 11:32] =>  0:42
+:END:      
+[2015-02-08 Sun 21:39]
+*** [2015-02-10 Tue] Eat Breakfast  
+:LOGBOOK:  
+CLOCK: [2015-02-10 Tue 10:55]--[2015-02-10 Tue 11:23] =>  0:28
+:END:      
+[2015-02-10 Tue 11:22]
+*** [2015-02-12 Thu] Eat Breakfast  
+:LOGBOOK:  
+CLOCK: [2015-02-12 Thu 10:41]--[2015-02-12 Thu 11:12] =>  0:31
+:END:      
+[2015-02-12 Thu 10:41]
+** Lunch
+:LOGBOOK:
+CLOCK: [2014-11-16 Sun 14:55]--[2014-11-16 Sun 15:26] =>  0:31
+CLOCK: [2014-11-15 Sat 12:28]--[2014-11-15 Sat 12:35] =>  0:07
+CLOCK: [2014-11-13 Thu 12:45]--[2014-11-13 Thu 12:53] =>  0:08
+CLOCK: [2014-11-12 Wed 13:56]--[2014-11-12 Wed 14:10] =>  0:14
+CLOCK: [2014-11-12 Wed 13:39]--[2014-11-12 Wed 13:56] =>  0:16
+CLOCK: [2014-11-11 Tue 12:54]--[2014-11-11 Tue 13:02] =>  0:08
+CLOCK: [2014-11-05 Wed 13:00]--[2014-11-05 Wed 13:15] =>  0:15
+CLOCK: [2014-11-02 Sun 12:59]--[2014-11-02 Sun 13:15] =>  0:16
+CLOCK: [2014-11-01 Sat 12:03]--[2014-11-01 Sat 12:23] =>  0:20
+:END:
+*** lunch
+:LOGBOOK:  
+CLOCK: [2014-11-19 Wed 12:40]--[2014-11-19 Wed 12:52] =>  0:12
+:END:      
+[2014-11-19 Wed 12:40]
+
+*** lunch eating out on sunday
+:LOGBOOK:  
+CLOCK: [2014-11-23 Sun 13:15]--[2014-11-23 Sun 14:17] =>  1:01
+:END:      
+[2014-11-23 Sun 13:16]
+*** lunch
+:LOGBOOK:  
+CLOCK: [2014-11-18 Tue 11:37]--[2014-11-18 Tue 11:44] =>  0:07
+:END:      
+[2014-11-18 Tue 11:44]
+
+*** lunch
+:LOGBOOK:  
+CLOCK: [2014-11-20 Thu 13:00]--[2014-11-20 Thu 13:19] =>  0:19
+CLOCK: [2014-11-20 Thu 12:55]--[2014-11-20 Thu 13:00] =>  0:05
+:END:      
+[2014-11-20 Thu 12:59]
+*** lunch
+:LOGBOOK:  
+CLOCK: [2014-11-21 Fri 13:07]--[2014-11-21 Fri 13:29] =>  0:22
+:END:      
+[2014-11-21 Fri 13:07]
+
+
+*** DONE have my lunch
+CLOSED: [2014-11-27 Thu 13:09]
+:LOGBOOK:  
+CLOCK: [2014-11-27 Thu 12:57]--[2014-11-27 Thu 13:09] =>  0:12
+:END:      
+
+[2014-11-27 Thu 12:57]
+
+*** DONE have lunch
+CLOSED: [2014-11-29 Sat 20:03]
+:LOGBOOK:  
+CLOCK: [2014-11-29 Sat 13:46]--[2014-11-29 Sat 14:32] =>  0:46
+:END:      
+
+[2014-11-29 Sat 13:46]
+
+*** Eat lunch 
+:LOGBOOK:
+CLOCK: [2014-11-30 Sun 13:28]--[2014-11-30 Sun 14:02] =>  0:34
+:END:
+[2014-11-30 Sun 13:28]
+
+*** DONE Sunday eat-out @Kong's
+CLOSED: [2014-12-07 Sun 15:55] SCHEDULED: <2014-12-07 Sun 12:30-13:30>
+:LOGBOOK:  
+CLOCK: [2014-12-07 Sun 13:44]--[2014-12-07 Sun 14:54] =>  1:09
+:END:      
+[2014-12-06 Sat 23:22]
+
+*** have lunch 
+:LOGBOOK:  
+CLOCK: [2014-12-05 Fri 12:46]--[2014-12-05 Fri 13:09] =>  0:23
+:END:      
+
+
+
+*** have my lunch 
+:LOGBOOK:  
+CLOCK: [2014-12-04 Thu 13:45]--[2014-12-04 Thu 13:58] =>  0:13
+:END:      
+
+*** eat lunch 
+:LOGBOOK:  
+CLOCK: [2014-12-10 Wed 15:00]--[2014-12-10 Wed 15:30] =>  0:30
+:END:      
+[2014-12-10 Wed 17:06]
+*** sunday lunch buffer 
+:LOGBOOK:  
+CLOCK: [2014-12-14 Sun 13:18]--[2014-12-14 Sun 14:18] =>  1:00
+:END:      
+[2014-12-14 Sun 13:18]
+*** DONE office lunch
+CLOSED: [2014-12-14 Sun 20:53]
+:LOGBOOK:  
+CLOCK: [2014-12-12 Fri 13:45]--[2014-12-12 Fri 14:00] =>  0:15
+:END:      
+[2014-12-14 Sun 20:53]
+
+*** DONE lunch at office
+CLOSED: [2014-12-14 Sun 20:54]
+:LOGBOOK:  
+CLOCK: [2014-12-11 Thu 12:46]--[2014-12-11 Thu 13:00] =>  0:14
+:END:      
+[2014-12-14 Sun 20:54]
+
+*** DONE have lunch
+CLOSED: [2014-12-16 Tue 15:08]
+:LOGBOOK:  
+CLOCK: [2014-12-16 Tue 13:28]--[2014-12-16 Tue 14:00] =>  0:32
+:END:      
+[2014-12-16 Tue 15:08]
+*** lunch time walk
+:LOGBOOK:  
+CLOCK: [2014-12-16 Tue 13:02]--[2014-12-16 Tue 13:28] =>  0:26
+:END:      
+[2014-12-16 Tue 15:09]
+*** have lunch 
+:LOGBOOK:  
+CLOCK: [2014-12-19 Fri 15:29]--[2014-12-19 Fri 15:45] =>  0:16
+:END:      
+[2014-12-20 Sat 10:55]
+*** DONE have lunch
+CLOSED: [2014-12-27 Sat 13:48]
+:LOGBOOK:  
+CLOCK: [2014-12-27 Sat 12:46]--[2014-12-27 Sat 13:01] =>  0:15
+:END:      
+[2014-12-27 Sat 13:48]
+*** DONE Sunday Lunch
+CLOSED: [2015-01-07 Wed 19:32] SCHEDULED: <2014-12-28 Sun 13:15-14:00>
+:LOGBOOK:  
+CLOCK: [2014-12-28 Sun 13:30]--[2014-12-28 Sun 14:33] =>  1:03
+:END:      
+:PROPERTIES:
+:Effort:   0:45
+:END:
+[2014-12-27 Sat 23:37]
+*** DONE Lunch at office
+CLOSED: [2014-12-30 Tue 21:44] SCHEDULED: <2014-12-30 Tue 12:00-12:30>
+:LOGBOOK:  
+CLOCK: [2014-12-30 Tue 12:31]--[2014-12-30 Tue 12:50] =>  0:19
+:END:      
+:PROPERTIES:
+:Effort:   0:30
+:MINDFULLNESS: 5
+:END:
+[2014-12-30 Tue 09:05]
+
+
+*** lunch 
+:LOGBOOK:  
+CLOCK: [2015-01-06 Tue 12:25]--[2015-01-06 Tue 13:10] =>  0:45
+:END:      
+[2015-01-06 Tue 12:25]
+
+*** DONE lunch at macdonal'ds
+CLOSED: [2015-01-10 Sat 22:30]
+:LOGBOOK:  
+CLOCK: [2015-01-10 Sat 14:50]--[2015-01-10 Sat 15:10] =>  0:20
+:END:      
+[2015-01-10 Sat 22:30]
+
+*** sunday lunch
+:LOGBOOK:  
+CLOCK: [2015-01-11 Sun 13:04]--[2015-01-11 Sun 13:50] =>  0:46
+:END:      
+[2015-01-11 Sun 13:04]
+*** DONE lunch
+CLOSED: [2015-01-13 Tue 11:51]
+:LOGBOOK:  
+CLOCK: [2015-01-12 Mon 12:48]--[2015-01-12 Mon 12:58] =>  0:10
+:END:      
+[2015-01-12 Mon 12:48]
+*** DONE have lunch
+CLOSED: [2015-01-18 Sun 12:39]
+:LOGBOOK:  
+CLOCK: [2015-01-17 Sat 13:30]--[2015-01-17 Sat 14:15] =>  0:45
+:END:      
+[2015-01-18 Sun 12:38]
+
+*** DONE lunch
+CLOSED: [2015-01-26 Mon 05:54]
+:LOGBOOK:  
+CLOCK: [2015-01-26 Mon 04:46]--[2015-01-26 Mon 05:05] =>  0:19
+:END:      
+[2015-01-26 Mon 04:46]
+*** DONE [2015-01-27 Tue] Eat Lunch
+CLOSED: [2015-01-27 Tue 13:13]
+:LOGBOOK:  
+CLOCK: [2015-01-27 Tue 12:50]--[2015-01-27 Tue 13:12] =>  0:22
+:END:      
+[2015-01-27 Tue 12:50]
+*** [2015-01-29 Thu] Eat Lunch  
+:LOGBOOK:  
+CLOCK: [2015-01-29 Thu 12:33]--[2015-01-29 Thu 13:10] =>  0:37
+:END:      
+[2015-01-29 Thu 12:33]
+*** [2015-01-30 Fri] Eat Lunch  
+:LOGBOOK:  
+CLOCK: [2015-01-30 Fri 14:45]--[2015-01-30 Fri 15:00] =>  0:15
+:END:      
+[2015-01-30 Fri 16:13]
+*** [2015-01-31 Sat] Eat Lunch  
+:LOGBOOK:  
+CLOCK: [2015-01-31 Sat 11:35]--[2015-01-31 Sat 12:20] =>  0:45
+:END:      
+[2015-01-31 Sat 18:47]
+*** [2015-02-02 Mon] Eat Lunch  
+:LOGBOOK:  
+CLOCK: [2015-02-02 Mon 14:39]--[2015-02-02 Mon 15:16] =>  0:37
+:END:      
+[2015-02-02 Mon 14:39]
+*** [2015-02-03 Tue] Eat Lunch  
+:LOGBOOK:  
+CLOCK: [2015-02-01 Sun 11:24]--[2015-02-01 Sun 14:40] =>  3:16
+:END:      
+[2015-02-03 Tue 10:38]
+*** [2015-02-03 Tue] Eat Lunch  
+:LOGBOOK:  
+CLOCK: [2015-02-03 Tue 14:21]--[2015-02-03 Tue 14:33] =>  0:12
+:END:      
+[2015-02-03 Tue 14:33]
+*** [2015-02-04 Wed] Eat Lunch 
+:LOGBOOK:  
+CLOCK: [2015-02-04 Wed 12:33]--[2015-02-04 Wed 12:54] =>  0:21
+:END:      
+[2015-02-04 Wed 12:33]
+*** eat lunch
+:LOGBOOK:  
+CLOCK: [2014-12-26 Fri 13:42]--[2014-12-26 Fri 14:08] =>  0:26
+:END:      
+[2014-12-26 Fri 13:49]
+*** [2015-02-07 Sat] Eat Lunch  
+:LOGBOOK:  
+CLOCK: [2015-02-07 Sat 12:36]--[2015-02-07 Sat 13:00] =>  0:24
+:END:      
+[2015-02-07 Sat 12:36]
+*** [2015-02-08 Sun] Eat Lunch  
+:LOGBOOK:  
+CLOCK: [2015-02-08 Sun 15:00]--[2015-02-08 Sun 15:46] =>  0:46
+:END:      
+[2015-02-08 Sun 21:25]
+*** [2015-02-09 Mon] Eat Lunch  
+:LOGBOOK:  
+CLOCK: [2015-02-09 Mon 13:48]--[2015-02-09 Mon 14:11] =>  0:23
+:END:      
+[2015-02-09 Mon 14:24]
+*** [2015-02-10 Tue] Eat Lunch  
+:LOGBOOK:  
+CLOCK: [2015-02-10 Tue 12:51]--[2015-02-10 Tue 13:11] =>  0:20
+:END:      
+[2015-02-10 Tue 13:11]
+*** [2015-02-11 Wed] Eat Lunch  
+:LOGBOOK:  
+CLOCK: [2015-02-11 Wed 12:23]--[2015-02-11 Wed 13:25] =>  1:02
+:END:      
+[2015-02-11 Wed 12:23]
+*** [2015-02-12 Thu] Eat Lunch  
+:LOGBOOK:  
+CLOCK: [2015-02-12 Thu 12:30]--[2015-02-12 Thu 12:54] =>  0:24
+:END:      
+[2015-02-12 Thu 16:34]
+*** [2015-02-13 Fri] Eat Lunch  
+:LOGBOOK:  
+CLOCK: [2015-02-13 Fri 12:49]--[2015-02-13 Fri 13:10] =>  0:21
+:END:      
+[2015-02-13 Fri 14:00]
+** Dinner 
+:LOGBOOK:
+CLOCK: [2014-11-16 Sun 18:06]--[2014-11-16 Sun 18:28] =>  0:22
+CLOCK: [2014-11-15 Sat 15:20]--[2014-11-15 Sat 16:30] =>  1:10
+CLOCK: [2014-11-14 Fri 18:25]--[2014-11-14 Fri 18:50] =>  0:25
+CLOCK: [2014-11-12 Wed 19:40]--[2014-11-12 Wed 20:37] =>  0:57
+CLOCK: [2014-11-10 Mon 20:26]--[2014-11-10 Mon 20:43] =>  0:17
+CLOCK: [2014-11-09 Sun 17:53]--[2014-11-09 Sun 18:38] =>  0:45
+CLOCK: [2014-11-08 Sat 18:09]--[2014-11-08 Sat 18:40] =>  0:31
+CLOCK: [2014-11-05 Wed 19:13]--[2014-11-05 Wed 19:48] =>  0:35
+CLOCK: [2014-11-03 Mon 17:24]--[2014-11-03 Mon 17:42] =>  0:18
+CLOCK: [2014-11-02 Sun 17:45]--[2014-11-02 Sun 18:21] =>  0:36
+CLOCK: [2014-11-02 Sun 17:00]--[2014-11-02 Sun 17:28] =>  0:28
+CLOCK: [2014-11-01 Sat 17:26]--[2014-11-01 Sat 18:00] =>  0:34
+:END:
+*** dinner with cook 
+    :LOGBOOK:  
+    CLOCK: [2014-11-25 Tue 17:36]--[2014-11-25 Tue 18:36] =>  1:00
+    :END:      
+*** dinner
+:LOGBOOK:  
+CLOCK: [2014-11-17 Mon 19:00]--[2014-11-17 Mon 19:20] =>  0:20
+:END:      
+
+
+*** dinner                                                           :NOTE:
+:LOGBOOK:  
+CLOCK: [2014-11-18 Tue 19:40]--[2014-11-18 Tue 20:01] =>  0:21
+:END:      
+:PROPERTIES:
+:ID:       57CE7440-A707-45BD-B704-0876BC711451
+:END:
+[2014-11-18 Tue 19:59]
+*** dinner
+:LOGBOOK:  
+CLOCK: [2014-11-19 Wed 18:30]--[2014-11-19 Wed 18:45] =>  0:15
+:END:      
+[2014-11-19 Wed 18:52]
+
+*** dinner (buy)
+:LOGBOOK:  
+CLOCK: [2014-11-19 Wed 17:30]--[2014-11-19 Wed 17:45] =>  0:15
+:END:      
+[2014-11-19 Wed 18:30]
+
+
+*** have dinner
+:LOGBOOK:  
+CLOCK: [2014-11-24 Mon 19:54]--[2014-11-24 Mon 20:14] =>  0:20
+:END:      
+[2014-11-24 Mon 22:06]
+
+*** dinner with nishit
+:LOGBOOK:  
+CLOCK: [2014-11-22 Sat 17:50]--[2014-11-22 Sat 18:30] =>  0:40
+:END:      
+[2014-11-22 Sat 20:39]
+*** dinner
+:LOGBOOK:  
+CLOCK: [2014-11-20 Thu 19:25]--[2014-11-20 Thu 20:00] =>  0:22
+:END:      
+[2014-11-20 Thu 19:38]
+*** dinner (buy from chinese take way)
+:LOGBOOK:  
+CLOCK: [2014-11-20 Thu 19:00]--[2014-11-20 Thu 19:10] =>  0:10
+:END:      
+[2014-11-20 Thu 19:38]
+
+*** dinner (buy from chinese take way)
+:LOGBOOK:  
+CLOCK: [2014-11-20 Thu 19:00]--[2014-11-20 Thu 19:10] =>  0:10
+:END:      
+[2014-11-20 Thu 19:38]
+
+*** Eat dinner 
+:LOGBOOK:
+CLOCK: [2014-11-26 Wed 20:16]--[2014-11-26 Wed 20:40] =>  0:24
+:END:
+[2014-11-26 Wed 20:16]
+
+*** Eat dinner 
+:LOGBOOK:
+CLOCK: [2014-11-26 Wed 18:05]--[2014-11-26 Wed 19:00] =>  0:54
+:END:
+[2014-11-26 Wed 18:06]
+
+*** having my dinner
+:LOGBOOK:  
+CLOCK: [2014-11-27 Thu 17:31]--[2014-11-27 Thu 18:00] =>  0:29
+:END:      
+[2014-11-27 Thu 19:05]
+*** have dinner
+:LOGBOOK:  
+CLOCK: [2014-11-21 Fri 18:50]--[2014-11-21 Fri 19:30] =>  0:40
+:END:      
+[2014-11-27 Thu 19:56]
+*** DONE second dinner 
+CLOSED: [2014-11-29 Sat 20:08]
+:LOGBOOK:  
+CLOCK: [2014-11-29 Sat 19:50]--[2014-11-29 Sat 20:08] =>  0:18
+:END:      
+:PROPERTIES:
+:ID:       2E8747B8-6B7B-4FF3-BF4B-CA5DABF0F8B6
+:END:
+[2014-11-29 Sat 20:08]
+
+*** have dinner with Nishit 
+:LOGBOOK:  
+CLOCK: [2014-11-29 Sat 17:45]--[2014-11-29 Sat 18:32] =>  0:47
+:END:      
+[2014-11-29 Sat 22:16]
+
+*** eat dinner 
+:LOGBOOK:  
+CLOCK: [2014-11-30 Sun 20:23]--[2014-11-30 Sun 21:00] =>  0:37
+:END:      
+[2014-11-30 Sun 21:18]
+
+*** have dinner 
+:LOGBOOK:  
+CLOCK: [2014-11-30 Sun 17:16]--[2014-11-30 Sun 18:09] =>  0:53
+:END:      
+[2014-11-30 Sun 17:16]
+*** dinner 
+:LOGBOOK:  
+CLOCK: [2014-12-01 Mon 19:38]--[2014-12-01 Mon 20:00] =>  0:22
+:END:      
+[2014-12-01 Mon 19:38]
+
+*** have dinner with nishit 
+:LOGBOOK:  
+CLOCK: [2014-12-04 Thu 19:05]--[2014-12-04 Thu 19:26] =>  0:21
+:END:      
+
+*** cook and eat dinner 
+:LOGBOOK:  
+CLOCK: [2014-12-03 Wed 17:39]--[2014-12-03 Wed 18:23] =>  0:44
+:END:
+*** have dinner 
+:LOGBOOK:  
+CLOCK: [2014-12-06 Sat 18:57]--[2014-12-06 Sat 19:34] =>  0:37
+:END:      
+chinese takeway 
+
+
+
+
+*** Sunday light dinner 
+:LOGBOOK:  
+CLOCK: [2014-12-07 Sun 17:37]--[2014-12-07 Sun 17:59] =>  0:22
+:END:      
+*** eat dinner 
+:LOGBOOK:  
+CLOCK: [2014-12-11 Thu 18:28]--[2014-12-11 Thu 18:45] =>  0:17
+:END:      
+[2014-12-11 Thu 22:01]
+
+*** have dinner 
+:LOGBOOK:  
+CLOCK: [2014-12-13 Sat 16:30]--[2014-12-13 Sat 17:28] =>  0:58
+:END:      
+[2014-12-14 Sun 17:00]
+
+*** DONE have dinner 
+CLOSED: [2014-12-08 Mon 17:36] SCHEDULED: <2014-12-08 Mon 17:00-17:30>
+:LOGBOOK:  
+CLOCK: [2014-12-08 Mon 17:00]--[2014-12-08 Mon 17:36] =>  0:36
+:END:      
+[2014-12-07 Sun 23:29]
+
+*** have dinner 2
+:LOGBOOK:  
+CLOCK: [2014-12-16 Tue 17:20]--[2014-12-16 Tue 17:56] =>  0:36
+:END:      
+[2014-12-16 Tue 17:36]
+*** have dinner 1 
+:LOGBOOK:  
+CLOCK: [2014-12-16 Tue 16:10]--[2014-12-16 Tue 16:55] =>  0:45
+:END:      
+[2014-12-16 Tue 16:23]
+
+*** have dinner - chicken curry with rice for 
+:LOGBOOK:  
+CLOCK: [2014-12-17 Wed 18:00]--[2014-12-17 Wed 18:38] =>  0:38
+:END:      
+[2014-12-18 Thu 19:04]
+*** have dinner 
+:LOGBOOK:  
+CLOCK: [2014-12-18 Thu 18:23]--[2014-12-18 Thu 18:56] =>  0:33
+:END:      
+[2014-12-18 Thu 19:10]
+
+*** cook and have dinner 
+:LOGBOOK:  
+CLOCK: [2014-12-20 Sat 17:30]--[2014-12-20 Sat 17:55] =>  0:25
+:END:      
+[2014-12-20 Sat 17:31]
+*** have dinner  
+:LOGBOOK:  
+CLOCK: [2014-12-23 Tue 17:21]--[2014-12-23 Tue 17:46] =>  0:25
+:END:      
+[2014-12-23 Tue 17:21]
+*** eat dinner 
+:LOGBOOK:  
+CLOCK: [2014-12-21 Sun 17:49]--[2014-12-21 Sun 18:25] =>  0:36
+:END:      
+[2014-12-21 Sun 17:48]
+*** cook and have dinner
+:LOGBOOK:  
+CLOCK: [2014-12-22 Mon 17:45]--[2014-12-22 Mon 18:15] =>  0:30
+:END:      
+[2014-12-22 Mon 18:28]
+*** cook and dinner 
+:LOGBOOK:  
+CLOCK: [2015-01-06 Tue 19:01]--[2015-01-06 Tue 19:27] =>  0:26
+:END:      
+[2015-01-06 Tue 19:27]
+*** DONE eat dinner
+CLOSED: [2014-12-27 Sat 00:04] SCHEDULED: <2014-12-25 Thu 18:00-18:15>
+:PROPERTIES:
+:Effort:   0:15
+:END:
+[2014-12-25 Thu 15:58]
+
+
+*** hae dinner 
+:LOGBOOK:  
+CLOCK: [2014-12-26 Fri 19:55]--[2014-12-26 Fri 20:40] =>  0:45
+:END:      
+[2014-12-26 Fri 19:55]
+*** dinner (treat myself)
+:LOGBOOK:  
+CLOCK: [2014-12-27 Sat 17:35]--[2014-12-27 Sat 18:44] =>  1:03
+:END:      
+[2014-12-27 Sat 17:41]
+
+*** have dinner 
+:LOGBOOK:  
+CLOCK: [2014-12-29 Mon 18:22]--[2014-12-29 Mon 19:45] =>  1:23
+:END:      
+[2014-12-30 Tue 22:21]
+
+*** dinner 
+:LOGBOOK:  
+CLOCK: [2015-01-02 Fri 17:10]--[2015-01-02 Fri 18:07] =>  0:57
+:END:      
+[2015-01-02 Fri 17:10]
+*** TODO dinner 
+:LOGBOOK:  
+CLOCK: [2015-01-05 Mon 18:13]--[2015-01-05 Mon 18:47] =>  0:34
+:END:      
+[2015-01-05 Mon 18:13]
+
+
+*** DONE eat dinner
+CLOSED: [2015-01-07 Wed 21:44]
+:LOGBOOK:  
+CLOCK: [2015-01-07 Wed 19:17]--[2015-01-07 Wed 19:47] =>  0:30
+:END:      
+[2015-01-07 Wed 21:43]
+
+*** dinner 
+:LOGBOOK:  
+CLOCK: [2015-01-10 Sat 21:00]--[2015-01-10 Sat 21:30] =>  0:30
+:END:      
+[2015-01-10 Sat 22:24]
+*** Eat dinner  
+:LOGBOOK:  
+CLOCK: [2015-01-09 Fri 19:08]--[2015-01-09 Fri 20:21] =>  1:13
+:END:      
+[2015-01-10 Sat 23:29]
+*** DONE dinner
+CLOSED: [2015-01-12 Mon 19:54]
+:LOGBOOK:  
+CLOCK: [2015-01-12 Mon 19:27]--[2015-01-12 Mon 19:54] =>  0:27
+:END:      
+[2015-01-12 Mon 19:54]
+
+*** DONE have dinner
+CLOSED: [2015-01-14 Wed 20:02]
+:LOGBOOK:  
+CLOCK: [2015-01-14 Wed 19:00]--[2015-01-14 Wed 19:35] =>  0:35
+:END:      
+[2015-01-14 Wed 19:00]
+*** DONE eat dinner
+CLOSED: [2015-01-15 Thu 17:58]
+:LOGBOOK:  
+CLOCK: [2015-01-15 Thu 17:30]--[2015-01-15 Thu 17:58] =>  0:28
+:END:      
+[2015-01-15 Thu 17:58]
+
+*** DONE eat dinner
+CLOSED: [2015-01-18 Sun 12:31]
+:LOGBOOK:  
+CLOCK: [2015-01-17 Sat 21:45]--[2015-01-17 Sat 22:30] =>  0:45
+:END:      
+[2015-01-18 Sun 12:31]
+*** eat/cook
+:LOGBOOK:  
+CLOCK: [2015-01-18 Sun 17:43]--[2015-01-18 Sun 18:26] =>  0:43
+:END:      
+[2015-01-18 Sun 17:43]
+*** DONE dinnner
+CLOSED: [2015-01-18 Sun 22:11]
+:LOGBOOK:  
+CLOCK: [2015-01-16 Fri 21:21]--[2015-01-16 Fri 22:06] =>  0:45
+:END:      
+[2015-01-18 Sun 22:11]
+*** DONE dinner a
+CLOSED: [2015-01-19 Mon 19:41]
+:LOGBOOK:  
+CLOCK: [2015-01-19 Mon 18:37]--[2015-01-19 Mon 18:55] =>  0:18
+:END:      
+[2015-01-19 Mon 18:47]
+
+*** DONE have dinner
+CLOSED: [2015-01-26 Mon 12:08]
+:LOGBOOK:  
+CLOCK: [2015-01-26 Mon 10:28]--[2015-01-26 Mon 12:08] =>  1:40
+:END:      
+[2015-01-26 Mon 10:28]
+*** [2015-01-27 Tue] Eat Dinner  
+:LOGBOOK:  
+CLOCK: [2015-01-27 Tue 19:28]--[2015-01-27 Tue 20:52] =>  1:24
+:END:      
+[2015-01-27 Tue 19:28]
+*** [2015-01-28 Wed] Eat Dinner  
+:LOGBOOK:  
+CLOCK: [2015-01-28 Wed 18:56]--[2015-01-28 Wed 19:17] =>  0:21
+:END:      
+[2015-01-28 Wed 18:56]
+*** [2015-01-29 Thu] Eat Dinner  
+:LOGBOOK:  
+CLOCK: [2015-01-29 Thu 19:37]--[2015-01-29 Thu 21:10] =>  1:33
+:END:      
+[2015-01-29 Thu 21:09]
+*** [2015-02-02 Mon] Eat Dinner  
+:LOGBOOK:  
+CLOCK: [2015-02-02 Mon 19:56]--[2015-02-02 Mon 20:22] =>  0:26
+:END:      
+[2015-02-02 Mon 19:56]
+*** [2015-02-03 Tue] Eat Dinner  
+:LOGBOOK:  
+CLOCK: [2015-02-01 Sun 17:43]--[2015-02-01 Sun 18:18] =>  0:35
+:END:      
+[2015-02-03 Tue 10:41]
+*** [2015-02-08 Sun] Eat Dinner  
+:LOGBOOK:  
+CLOCK: [2015-02-08 Sun 18:15]--[2015-02-08 Sun 18:55] =>  0:40
+:END:      
+[2015-02-08 Sun 21:27]
+*** [2015-02-10 Tue] Eat Dinner  
+:LOGBOOK:  
+CLOCK: [2015-02-10 Tue 18:26]--[2015-02-10 Tue 19:25] =>  0:59
+:END:      
+[2015-02-11 Wed 17:10]
+*** [2015-02-11 Wed] Eat Dinner  
+:LOGBOOK:  
+CLOCK: [2015-02-11 Wed 18:57]--[2015-02-11 Wed 19:36] =>  0:39
+:END:      
+[2015-02-11 Wed 18:57]
+*** [2015-02-12 Thu] Eat Dinner  
+:LOGBOOK:  
+CLOCK: [2015-02-12 Thu 19:12]--[2015-02-12 Thu 19:44] =>  0:32
+:END:      
+[2015-02-12 Thu 19:12]
+*** [2015-02-14 Sat] Eat Dinner  
+[2015-02-14 Sat 00:29]
+** Snack
+:LOGBOOK:
+
+CLOCK: [2014-11-16 Sun 18:53]--[2014-11-16 Sun 19:07] =>  0:14
+CLOCK: [2014-11-14 Fri 16:20]--[2014-11-14 Fri 16:40] =>  0:20
+CLOCK: [2014-11-11 Tue 16:06]--[2014-11-11 Tue 16:21] =>  0:15
+CLOCK: [2014-11-12 Wed 19:06]--[2014-11-12 Wed 19:40] =>  0:34
+CLOCK: [2014-11-13 Thu 16:13]--[2014-11-13 Thu 16:32] =>  0:19
+CLOCK: [2014-11-10 Mon 16:40]--[2014-11-10 Mon 16:50] =>  0:10
+CLOCK: [2014-11-09 Sun 15:01]--[2014-11-09 Sun 15:37] =>  0:36
+CLOCK: [2014-11-06 Thu 19:00]--[2014-11-06 Thu 19:05] =>  0:17
+:END:
+[2014-11-06 Thu 19:17]
+*** snack
+:LOGBOOK:  
+CLOCK: [2014-11-17 Mon 16:55]--[2014-11-17 Mon 17:25] =>  0:30
+:END:      
+[2014-11-17 Mon 18:08]
+
+*** snack 
+:LOGBOOK:  
+CLOCK: [2014-11-18 Tue 16:01]--[2014-11-18 Tue 16:35] =>  0:39
+:END:      
+[2014-11-18 Tue 16:40]
+
+*** snack
+:LOGBOOK:  
+CLOCK: [2014-11-24 Mon 16:17]--[2014-11-24 Mon 16:58] =>  0:41
+:END:      
+[2014-11-24 Mon 22:17]
+*** snack after work
+:LOGBOOK:  
+CLOCK: [2014-12-01 Mon 16:50]--[2014-12-01 Mon 17:06] =>  0:16
+:END:      
+[2014-12-01 Mon 17:59]
+*** have snack 
+:LOGBOOK:  
+CLOCK: [2014-12-02 Tue 15:50]--[2014-12-02 Tue 16:15] =>  0:25
+:END:      
+
+
+*** have snack 
+:LOGBOOK:  
+CLOCK: [2014-12-04 Thu 16:45]--[2014-12-04 Thu 17:20] =>  0:35
+:END:      
+
+*** have snack 
+:LOGBOOK:  
+CLOCK: [2014-12-09 Tue 16:57]--[2014-12-09 Tue 17:31] =>  0:34
+:END:      
+[2014-12-09 Tue 16:57]
+** Cook
+:LOGBOOK:
+CLOCK: [2014-11-04 Tue 17:20]--[2014-11-04 Tue 18:09] =>  0:49
+:END:
+*** cook 
+:LOGBOOK:  
+CLOCK: [2014-11-30 Sun 19:50]--[2014-11-30 Sun 20:23] =>  0:33
+:END:      
+[2014-11-30 Sun 19:50]
+
+*** cook 
+:LOGBOOK:  
+CLOCK: [2014-12-03 Wed 21:30]--[2014-12-03 Wed 21:59] =>  0:29
+:END:      
+[2014-12-03 Wed 21:30]
+
+
+*** cook 
+:LOGBOOK:  
+CLOCK: [2014-12-10 Wed 14:06]--[2014-12-10 Wed 15:00] =>  0:54
+:END:      
+[2014-12-10 Wed 14:06]
+*** cook veg curry  
+:LOGBOOK:  
+CLOCK: [2014-12-15 Mon 17:45]--[2014-12-15 Mon 18:30] =>  0:45
+:END:      
+[2014-12-15 Mon 19:32]
+*** make cake 
+:LOGBOOK:  
+CLOCK: [2014-12-19 Fri 20:01]--[2014-12-19 Fri 21:20] =>  1:46
+:END:      
+[2014-12-19 Fri 20:01]
+*** cook for 1x smoothie, 1x salad lunch, 2x dinner 
+:LOGBOOK:  
+CLOCK: [2014-12-21 Sun 21:41]--[2014-12-21 Sun 22:42] =>  1:01
+:END:      
+[2014-12-21 Sun 21:42]
+*** cook
+:LOGBOOK:  
+CLOCK: [2014-12-22 Mon 22:21]--[2014-12-22 Mon 22:36] =>  0:15
+:END:      
+[2014-12-22 Mon 22:21]
+
+*** DONE [#A] cook about 40 minutes tmr
+CLOSED: [2015-01-07 Wed 19:17] SCHEDULED: <2015-01-07 Wed 16:30-17:00>
+[2015-01-06 Tue 22:41]
+*** cook
+:LOGBOOK:  
+CLOCK: [2014-12-29 Mon 17:45]--[2014-12-29 Mon 18:22] =>  0:37
+:END:      
+[2014-12-30 Tue 22:20]
+
+*** DONE cook
+CLOSED: [2015-01-07 Wed 21:42]
+:LOGBOOK:  
+CLOCK: [2015-01-07 Wed 17:52]--[2015-01-07 Wed 18:49] =>  0:57
+:END:      
+[2015-01-07 Wed 21:42]
+*** DONE cook
+CLOSED: [2015-01-10 Sat 23:29]
+:LOGBOOK:  
+CLOCK: [2015-01-09 Fri 18:08]--[2015-01-09 Fri 19:08] =>  1:00
+:END:      
+[2015-01-09 Fri 18:08]
