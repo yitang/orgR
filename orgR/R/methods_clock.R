@@ -65,7 +65,14 @@ drillDown.Clock <- function(Clock, id, drill.level = 1L) {
 
 
 #### data visualisation 
-
+##'  Clock data
+##'
+##' Visualise the clock entries
+##' @title Visualisation
+##' @param Clock a clock tables.
+##' @return plots
+##' @export 
+##' @author Yi Tang
 view.Clock <- function(Clock) {
     if (is.data.table(Clock)){
         Clock <- copy(Clock)
