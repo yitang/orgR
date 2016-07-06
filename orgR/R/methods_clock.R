@@ -86,13 +86,21 @@ view.Clock <- function(Clock) {
                     ncol = 2)
     return(p)
 }
-
-viewByFamily.Clock <- function(Clock, split.by.level = 1, drill.down.level = 1) {
+##'  Clock data
+##'
+##' Visualisation the clock entries 
+##' @param Clock Clock, a clock table
+##' @param top.level integer, the top level nodes.
+##' @return plots
+##' @export 
+##' @author Yi Tang
+viewByFamily.Clock <- function(Clock, top.level = 1L) {
     Clock <- copy(Clock)
     Clock[, duration := as.numeric(duration)]
-    # node.base <- GetNodeBase(qs.file)
-    # setkey(node.base, node.id) ## TODO: move this bit to GetNodeBase()
-    family.tree <- formulateFamilyTree(Clock, ancestor.level = split.by.level, children.level = 100)
+    ## node.base <- GetNodeBase(qs.file)
+    ## setkey(node.base, node.id) ## TODO: move this bit to GetNodeBase()
+    
+    family.tree <- formulateFamilyTree(Clock, ancestor.level = top.level, children.level = 100)
     Clock <- addFamilyName(Clock, family.tree)
     p.hist.duration <- ggplot(Clock, aes(duration, fill = ancestor.headlines)) + geom_histogram() + scale_fill_discrete("Headline")
     p.ts.duration <- ggplot(Clock, aes(x=start, y = duration, col = ancestor.headlines)) + geom_point() + geom_smooth() + scale_color_discrete("Headline")
