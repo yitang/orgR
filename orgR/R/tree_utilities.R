@@ -1,5 +1,5 @@
 searchParents <- function(node.base, id, parents.level = 1L){
-    id.level <- node.base[J(id), level]
+    id.level <- node.base[J(id)]$level
     target.level <- id.level - parents.level
     if (target.level < min(node.base$node.id)) {
         cat("\nOut of range: searchParents()")
@@ -18,7 +18,8 @@ searchParents <- function(node.base, id, parents.level = 1L){
 }
 
 searchChildren <- function(node.base, id, children.level = 1L){
-    id.level <- node.base[J(id), level]
+    ## browser()
+    id.level <- node.base[J(id)]$level
     target.level <- seq(id.level + 1, id.level + children.level)
     if (min(target.level) > max(node.base$level)) {
         cat("\nOut of range: searchChildren()")
