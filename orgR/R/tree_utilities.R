@@ -19,6 +19,8 @@ searchParents <- function(node.base, id, parents.level = 1L){
 
 searchChildren <- function(node.base, id, children.level = 1L){
     ## browser()
+    setkey(node.base, node.id)
+    ## print(head(node.base))
     id.level <- node.base[J(id)]$level
     target.level <- seq(id.level + 1, id.level + children.level)
     if (min(target.level) > max(node.base$level)) {
@@ -75,7 +77,7 @@ formulateFamilyTree <- function(node.base, ancestor.level = 1, children.level = 
     node.base <- copy(node.base)
     ancestor.node <- node.base[level == ancestor.level, ]
     familyTree <- lapply(seq_len(nrow(ancestor.node)), function(i) {
-        print(i)
+        ## print(i)
         ancestor.node.id <- ancestor.node[i, node.id]
         children.node.id <- searchChildren(node.base, ancestor.node.id, children.level)
         if (is.null(children.node.id)) return()
@@ -97,7 +99,12 @@ addFamilyName <- function(node.base, familyTree){
 --> (Rest, Nap),
 --> (Rest, Sleep)
 "
-    node.base <- copy(node.base)
+    ## node.base <- copy(node.base)
+    ## print(node.base)
+    ## print(class(node.base))
+    ## key(node.base)
+    setkey(node.base, node.id)
+    ## stop()
     res <- lapply(seq_along(familyTree), function(i){
         print(i)
         children.ids <- familyTree[[i]]$children.node.id

@@ -71,5 +71,4 @@ GetClockTable <- function(org.file){
     clock.table[, clock.entries := NULL]
     setkey(clock.table, node.id)
     return(clock.table)
-
 }

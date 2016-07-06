@@ -1,3 +1,4 @@
+
 #### data manipulation 
 
 subsetDuration.Clock <- function(Clock, min, max, inner = TRUE){
@@ -110,20 +111,31 @@ viewByFamily.Clock <- function(Clock, top.level = 1L) {
     return(p)
 }
 
-
-## viewPieChart.Clock <- function(Clock, split.by.level = 1, drill.down.level = 1) {
-##     Clock <- copy(Clock)
-##     Clock[, duration := as.numeric(duration)]
-##     family.tree <- formulateFamilyTree(Clock, ancestor.level = split.by.level, children.level = 100)
-##     Clock <- addFamilyName(Clock, family.tree)
-##     p.pies <- lapply(seq_along(family.tree), function(i) {
-##         ancestor.id <- unique(family.tree[[i]]$ancestor.node.id)
-##         ancestor.headline <- Clock[J(ancestor.id), headline]
-##         k <- drillDown.Clock(clock.table2, ancestor.id)
-##         ggpie(k, "headline", "sum") + labs(title = ancestor.headline)
-##     })
-##     p.pies <- do.call(arrangeGrob, c(p.pies))
-##     return(p.pies)
-## }
+##'  Clock data
+##'
+##' Visualise clock entries
+##' @title Pie chart
+##' @param Clock Clock, a clock table
+##' @param top.level integer, the top level nodes.
+##' @return plots
+##' @export 
+##' @author Yi Tang
+viewPieChart.Clock <- function(Clock, top.level = 1) {
+    ## Clock <- copy(Clock)
+    ## Clock[, duration := as.numeric(duration)]
+    family.tree <- formulateFamilyTree(Clock, ancestor.level = top.level, children.level = 100)
+    print(Clock)
+    print(class(Clock))
+    print(key(Clock))
+    Clock <- addFamilyName(Clock, family.tree)
+    p.pies <- lapply(seq_along(family.tree), function(i) {
+        ancestor.id <- unique(family.tree[[i]]$ancestor.node.id)
+        ancestor.headline <- Clock[J(ancestor.id), headline]
+        k <- drillDown.Clock(clock.table2, ancestor.id)
+        ggpie(k, "headline", "sum") + labs(title = ancestor.headline)
+    })
+    p.pies <- do.call(arrangeGrob, c(p.pies))
+    return(p.pies)
+}
     
 
